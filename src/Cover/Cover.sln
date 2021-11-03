@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoverUI", "CoverUI\CoverUI.csproj", "{01179F18-C361-4734-A7A6-6F92FB95FDEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cover", "Cover\Cover.csproj", "{14E597B7-0BAD-4DF7-888F-957C35C82559}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01179F18-C361-4734-A7A6-6F92FB95FDEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01179F18-C361-4734-A7A6-6F92FB95FDEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01179F18-C361-4734-A7A6-6F92FB95FDEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01179F18-C361-4734-A7A6-6F92FB95FDEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E597B7-0BAD-4DF7-888F-957C35C82559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E597B7-0BAD-4DF7-888F-957C35C82559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E597B7-0BAD-4DF7-888F-957C35C82559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E597B7-0BAD-4DF7-888F-957C35C82559}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF2988AC-E163-4475-9F0E-28444FE071A2}
+	EndGlobalSection
+EndGlobal
