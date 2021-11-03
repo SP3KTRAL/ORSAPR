@@ -201,7 +201,7 @@ namespace CoverUI
             this.pictureBox.Image = global::CoverUI.Properties.Resources.CoverDiameter_A_;
             this.pictureBox.Location = new System.Drawing.Point(375, 12);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(265, 255);
+            this.pictureBox.Size = new System.Drawing.Size(231, 198);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 16;
             this.pictureBox.TabStop = false;
@@ -232,7 +232,7 @@ namespace CoverUI
             this.minMaxDiameterSmallSteppedHoleCoverLabel.Name = "minMaxDiameterSmallSteppedHoleCoverLabel";
             this.minMaxDiameterSmallSteppedHoleCoverLabel.Size = new System.Drawing.Size(86, 13);
             this.minMaxDiameterSmallSteppedHoleCoverLabel.TabIndex = 19;
-            this.minMaxDiameterSmallSteppedHoleCoverLabel.Text = "(17мм – 170mm)";
+            this.minMaxDiameterSmallSteppedHoleCoverLabel.Text = "(17mm – 170mm)";
             // 
             // minMaxDiameterLargeSteppedCoverHoleLabel
             // 
@@ -292,7 +292,7 @@ namespace CoverUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 285);
+            this.ClientSize = new System.Drawing.Size(622, 285);
             this.Controls.Add(this.minMaxHeightInnerStepCoverLabel);
             this.Controls.Add(this.minMaxCoverStepHeightLabel);
             this.Controls.Add(this.minMaxCoverThicknessLabel);

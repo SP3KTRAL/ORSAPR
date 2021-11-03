@@ -59,7 +59,7 @@ namespace CoverUI
 
         private void buildButton_Click(object sender, System.EventArgs e)
         {
-            MessageBox.Show("Invalid value cover diameter!");
+            MessageBox.Show("Wrong cover diameter = 550 mm. Range: 50 mm - 500 mm" + "!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
