@@ -208,7 +208,7 @@ namespace CoverUI
             // 
             // buildButton
             // 
-            this.buildButton.Location = new System.Drawing.Point(12, 244);
+            this.buildButton.Location = new System.Drawing.Point(535, 250);
             this.buildButton.Name = "buildButton";
             this.buildButton.Size = new System.Drawing.Size(75, 23);
             this.buildButton.TabIndex = 17;
