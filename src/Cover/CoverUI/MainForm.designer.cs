@@ -132,13 +132,13 @@ namespace CoverUI
             // 
             // coverDiameterTextBox
             // 
-            this.coverDiameterTextBox.BackColor = System.Drawing.Color.MistyRose;
+            this.coverDiameterTextBox.BackColor = System.Drawing.Color.White;
             this.coverDiameterTextBox.Location = new System.Drawing.Point(199, 9);
             this.coverDiameterTextBox.Name = "coverDiameterTextBox";
             this.coverDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverDiameterTextBox.TabIndex = 8;
             this.coverDiameterTextBox.Click += new System.EventHandler(this.coverDiameterTextBox_Click);
-            this.coverDiameterTextBox.Leave += new System.EventHandler(this.coverDiameterTextBox_Leave);
+            this.coverDiameterTextBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // diameterSmallSteppedHoleCoverTextBox
             // 
@@ -179,6 +179,7 @@ namespace CoverUI
             this.coverThicknessTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverThicknessTextBox.TabIndex = 13;
             this.coverThicknessTextBox.Click += new System.EventHandler(this.coverThicknessTextBox_Click);
+            this.coverThicknessTextBox.Leave += new System.EventHandler(this.coverThicknessTextBox_Leave);
             // 
             // coverStepHeightTextBox
             // 
@@ -187,6 +188,7 @@ namespace CoverUI
             this.coverStepHeightTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverStepHeightTextBox.TabIndex = 14;
             this.coverStepHeightTextBox.Click += new System.EventHandler(this.coverStepHeightTextBox_Click);
+            this.coverStepHeightTextBox.Leave += new System.EventHandler(this.coverStepHeightTextBox_Leave);
             // 
             // heightInnerStepCoverTextBox
             // 
@@ -195,6 +197,7 @@ namespace CoverUI
             this.heightInnerStepCoverTextBox.Size = new System.Drawing.Size(60, 20);
             this.heightInnerStepCoverTextBox.TabIndex = 15;
             this.heightInnerStepCoverTextBox.Click += new System.EventHandler(this.heightInnerStepCoverTextBox_Click);
+            this.heightInnerStepCoverTextBox.Leave += new System.EventHandler(this.heightInnerStepCoverTextBox_Leave);
             // 
             // pictureBox
             // 
@@ -268,7 +271,7 @@ namespace CoverUI
             this.minMaxCoverThicknessLabel.Name = "minMaxCoverThicknessLabel";
             this.minMaxCoverThicknessLabel.Size = new System.Drawing.Size(80, 13);
             this.minMaxCoverThicknessLabel.TabIndex = 23;
-            this.minMaxCoverThicknessLabel.Text = "(6 mm – 68 mm)";
+            this.minMaxCoverThicknessLabel.Text = "(6 mm – 60 mm)";
             // 
             // minMaxCoverStepHeightLabel
             // 

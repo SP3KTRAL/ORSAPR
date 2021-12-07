@@ -1,6 +1,10 @@
-﻿namespace Cover
+﻿using System;
+using System.Windows.Forms;
+
+
+namespace Cover
 {
-    class CoverParameter
+    public class CoverParameter
     {
         private double _coverDiameter;
         private double _diameterSmallSteppedHoleCover;
@@ -10,16 +14,23 @@
         private double _coverThickness;
         private double _coverStepHeight;
         private double _heightInnerStepCover;
+        private double _maxValueCoverStepHeight = 40;
+        private double _maxValueHeightInnerStepCover = 50;
 
         public double CoverDiameter
         {
-            get
-            {
-                return _coverDiameter;
-            }
+            get => _coverDiameter;
             set
             {
-                _coverDiameter = value;
+                if (value > 50 && value < 500)
+                {
+                    _coverDiameter = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Wrong cover diameter = " + value + " " +
+                                                "mm. Range: 50 mm - 500 mm!");
+                }
             }
         }
 
@@ -73,36 +84,78 @@
 
         public double CoverThickness
         {
-            get
-            {
-                return _coverThickness;
-            }
+            get => _coverThickness;
             set
             {
-                _coverThickness = value;
+                if (value >= 6  && value <= 60)
+                {
+                    _coverThickness = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Wrong cover thickness = " 
+                                                + value + " mm. Range: 6 mm - 60 mm!");
+                }
             }
         }
 
         public double CoverStepHeight
         {
-            get
-            {
-                return _coverStepHeight;
-            }
+            get => _coverStepHeight;
             set
             {
-                _coverStepHeight = value;
+                if (value >= 4 && value <= MaxValueCoverStepHeight)
+                {
+                    _coverStepHeight = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Wrong cover step height = "
+                                                + value + " mm. Range: 6 mm - " + MaxValueCoverStepHeight + " mm!");
+                }
+            }
+        }
+
+        public double MaxValueCoverStepHeight
+        {
+            get => _maxValueCoverStepHeight;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException($"Value must be greater than zero");
+                }
+
+                _maxValueCoverStepHeight = value;
+            }
+        }
+
+        public double MaxValueHeightInnerStepCover
+        {
+            get => _maxValueHeightInnerStepCover;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException($"Value must be greater than zero");
+                }
+
+                _maxValueHeightInnerStepCover = value;
             }
         }
 
         public double HeightInnerStepCover
         {
-            get
-            {
-                return _heightInnerStepCover;
-            }
+            get => _heightInnerStepCover;
             set
             {
+                if (value < 5 || value > MaxValueHeightInnerStepCover)
+                {
+                    throw new ArgumentException(
+                        "Wrong height inner step cover = " + value + 
+                        " mm. Range: 6 mm - " + MaxValueHeightInnerStepCover + " mm!");
+                }
+
                 _heightInnerStepCover = value;
             }
         }
