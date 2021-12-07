@@ -28,8 +28,8 @@ namespace Cover
                 }
                 else
                 {
-                    throw new ArgumentException("Wrong cover diameter = " + value + " " +
-                                                "mm. Range: 50 mm - 500 mm!");
+                    throw new ArgumentException("Wrong cover diameter = " + 
+                                                value + " " + "mm. Range: 50 mm - 500 mm!");
                 }
             }
         }
@@ -93,9 +93,12 @@ namespace Cover
                 }
                 else
                 {
-                    throw new ArgumentException("Wrong cover thickness = " 
-                                                + value + " mm. Range: 6 mm - 60 mm!");
+                    throw new ArgumentException("Wrong cover thickness = " + 
+                                                value + " mm. Range: 6 mm - 60 mm!");
                 }
+
+                MaxValueCoverStepHeight = Math.Round(CoverThickness / 1.5, 1);
+                MaxValueHeightInnerStepCover = Math.Round(CoverThickness / 1.2, 1);
             }
         }
 
@@ -110,8 +113,8 @@ namespace Cover
                 }
                 else
                 {
-                    throw new ArgumentException("Wrong cover step height = "
-                                                + value + " mm. Range: 6 mm - " + MaxValueCoverStepHeight + " mm!");
+                    throw new ArgumentException("Wrong cover step height = " + 
+                                                value + " mm. Range: 6 mm - " + MaxValueCoverStepHeight + " mm!");
                 }
             }
         }
@@ -153,7 +156,7 @@ namespace Cover
                 {
                     throw new ArgumentException(
                         "Wrong height inner step cover = " + value + 
-                        " mm. Range: 6 mm - " + MaxValueHeightInnerStepCover + " mm!");
+                        " mm. Range: 5 mm - " + MaxValueHeightInnerStepCover + " mm!");
                 }
 
                 _heightInnerStepCover = value;

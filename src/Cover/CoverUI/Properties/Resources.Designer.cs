@@ -63,9 +63,9 @@ namespace CoverUI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CoverDiameter_A_ {
+        internal static System.Drawing.Bitmap coverDiameterTextBox {
             get {
-                object obj = ResourceManager.GetObject("CoverDiameter_A_", resourceCulture);
+                object obj = ResourceManager.GetObject("coverDiameterTextBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace CoverUI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CoverStepHeight_G_ {
+        internal static System.Drawing.Bitmap coverStepHeightTextBox {
             get {
-                object obj = ResourceManager.GetObject("CoverStepHeight_G_", resourceCulture);
+                object obj = ResourceManager.GetObject("coverStepHeightTextBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace CoverUI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CoverThickness_F_ {
+        internal static System.Drawing.Bitmap coverThicknessTextBox {
             get {
-                object obj = ResourceManager.GetObject("CoverThickness_F_", resourceCulture);
+                object obj = ResourceManager.GetObject("coverThicknessTextBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace CoverUI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DiameterLargeSteppedCoverHole_C_ {
+        internal static System.Drawing.Bitmap diameterLargeSteppedCoverHoleTextBox {
             get {
-                object obj = ResourceManager.GetObject("DiameterLargeSteppedCoverHole_C_", resourceCulture);
+                object obj = ResourceManager.GetObject("diameterLargeSteppedCoverHoleTextBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace CoverUI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DiameterSmallSteppedHoleCover_B_ {
+        internal static System.Drawing.Bitmap diameterSmallSteppedHoleCoverTextBox {
             get {
-                object obj = ResourceManager.GetObject("DiameterSmallSteppedHoleCover_B_", resourceCulture);
+                object obj = ResourceManager.GetObject("diameterSmallSteppedHoleCoverTextBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace CoverUI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HeightInnerStepCover_H_ {
+        internal static System.Drawing.Bitmap heightInnerStepCoverTextBox {
             get {
-                object obj = ResourceManager.GetObject("HeightInnerStepCover_H_", resourceCulture);
+                object obj = ResourceManager.GetObject("heightInnerStepCoverTextBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace CoverUI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OuterStepDiameter_E_ {
+        internal static System.Drawing.Bitmap outerStepDiameterTextBox {
             get {
-                object obj = ResourceManager.GetObject("OuterStepDiameter_E_", resourceCulture);
+                object obj = ResourceManager.GetObject("outerStepDiameterTextBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace CoverUI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SmallHoleDiameter_D_ {
+        internal static System.Drawing.Bitmap smallHoleDiameterTextBox {
             get {
-                object obj = ResourceManager.GetObject("SmallHoleDiameter_D_", resourceCulture);
+                object obj = ResourceManager.GetObject("smallHoleDiameterTextBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
