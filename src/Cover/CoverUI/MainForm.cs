@@ -17,24 +17,9 @@ namespace CoverUI
             _coverParameter = new CoverParameter();
         }
 
-        private void coverThicknessTextBox_Leave(object sender, EventArgs e)
-        {
-            ChangeParameter(sender, nameof(_coverParameter.CoverThickness));
-        }
-
         private void buildButton_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void coverStepHeightTextBox_Leave(object sender, EventArgs e)
-        {
-            ChangeParameter(sender, nameof(_coverParameter.CoverStepHeight));
-        }
-
-        private void heightInnerStepCoverTextBox_Leave(object sender, EventArgs e)
-        {
-            ChangeParameter(sender, nameof(_coverParameter.HeightInnerStepCover));
         }
 
         private void textBox_Click(object sender, EventArgs e)
@@ -42,7 +27,12 @@ namespace CoverUI
             pictureBox.Image = (Image)Properties.Resources.ResourceManager.GetObject(((TextBox)sender).Name);
         }
 
-        private void ChangeParameter(object sender, string parameterName)
+        private void textBox_Leave(object sender, EventArgs e)
+        {
+            ChangeParameter(sender);
+        }
+
+        private void ChangeParameter(object sender)
         {
             ((TextBox)sender).Text = ((TextBox)sender).Text.Replace('.', ',');
             if (((TextBox)sender).Text == string.Empty)
@@ -54,9 +44,9 @@ namespace CoverUI
             {
                 double value = Convert.ToDouble(((TextBox) sender).Text);
                 
-                switch (parameterName)
+                switch (((TextBox)sender).Name)
                 {
-                    case nameof(_coverParameter.CoverThickness):
+                    case nameof(coverThicknessTextBox):
                         _coverParameter.CoverThickness = value;
 
                         minMaxCoverStepHeightLabel.Text = 
@@ -65,10 +55,12 @@ namespace CoverUI
                         minMaxHeightInnerStepCoverLabel.Text =
                             "(5 mm – " + _coverParameter.MaxValueHeightInnerStepCover + " mm)";
                         break;
-                    case nameof(_coverParameter.HeightInnerStepCover):
+
+                    case nameof(heightInnerStepCoverTextBox):
                         _coverParameter.HeightInnerStepCover = value;
                         break;
-                    case nameof(_coverParameter.CoverStepHeight):
+
+                    case nameof(coverStepHeightTextBox):
                         _coverParameter.CoverStepHeight = value;
                         break;
                     default: break;

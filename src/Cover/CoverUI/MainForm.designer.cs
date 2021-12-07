@@ -178,7 +178,7 @@ namespace CoverUI
             this.coverThicknessTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverThicknessTextBox.TabIndex = 13;
             this.coverThicknessTextBox.Click += new System.EventHandler(this.textBox_Click);
-            this.coverThicknessTextBox.Leave += new System.EventHandler(this.coverThicknessTextBox_Leave);
+            this.coverThicknessTextBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // coverStepHeightTextBox
             // 
@@ -187,7 +187,7 @@ namespace CoverUI
             this.coverStepHeightTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverStepHeightTextBox.TabIndex = 14;
             this.coverStepHeightTextBox.Click += new System.EventHandler(this.textBox_Click);
-            this.coverStepHeightTextBox.Leave += new System.EventHandler(this.coverStepHeightTextBox_Leave);
+            this.coverStepHeightTextBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // heightInnerStepCoverTextBox
             // 
@@ -196,7 +196,7 @@ namespace CoverUI
             this.heightInnerStepCoverTextBox.Size = new System.Drawing.Size(60, 20);
             this.heightInnerStepCoverTextBox.TabIndex = 15;
             this.heightInnerStepCoverTextBox.Click += new System.EventHandler(this.textBox_Click);
-            this.heightInnerStepCoverTextBox.Leave += new System.EventHandler(this.heightInnerStepCoverTextBox_Leave);
+            this.heightInnerStepCoverTextBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // pictureBox
             // 
