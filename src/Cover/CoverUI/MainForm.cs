@@ -34,11 +34,12 @@ namespace CoverUI
 
         private void ChangeParameter(object sender)
         {
-            ((TextBox)sender).Text = ((TextBox)sender).Text.Replace('.', ',');
             if (((TextBox)sender).Text == string.Empty)
             {
                 return;
             }
+
+            ((TextBox)sender).Text = ((TextBox)sender).Text.Replace('.', ',');
 
             try
             {
@@ -46,14 +47,55 @@ namespace CoverUI
                 
                 switch (((TextBox)sender).Name)
                 {
+                    case nameof(coverDiameterTextBox):
+                        _coverParameter.CoverDiameter = value;
+
+                        minMaxSmallHoleDiameterLabel.Text = 
+                            "(2 mm – " + _coverParameter.MaxSmallHoleDiameter + " mm)";
+
+                        minMaxOuterStepDiameterLabel.Text = 
+                            "(35 mm – " + _coverParameter.MaxOuterStepDiameter + " mm)";
+
+                        minMaxDiameterLargeSteppedCoverHoleLabel.Text =
+                            "(20 mm – " + _coverParameter.MaxDiameterLargeSteppedCoverHole + " mm)";
+
+                        minMaxDiameterSmallSteppedHoleCoverLabel.Text =
+                            "(15 mm – " + _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
+                        break;
+
+                    case nameof(diameterSmallSteppedHoleCoverTextBox):
+                        _coverParameter.DiameterSmallSteppedHoleCover = value;
+                        break;
+
+                    case nameof(diameterLargeSteppedCoverHoleTextBox):
+                        _coverParameter.DiameterLargeSteppedCoverHole = value;
+
+                        minMaxDiameterSmallSteppedHoleCoverLabel.Text = 
+                            "(15 mm – " + _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
+                        break;
+
+                    case nameof(smallHoleDiameterTextBox):
+                        _coverParameter.SmallHoleDiameter = value;
+                        break;
+
+                    case nameof(outerStepDiameterTextBox):
+                        _coverParameter.OuterStepDiameter = value;
+
+                        minMaxDiameterLargeSteppedCoverHoleLabel.Text =
+                            "(20 mm – " + _coverParameter.MaxDiameterLargeSteppedCoverHole + " mm)";
+
+                        minMaxDiameterSmallSteppedHoleCoverLabel.Text =
+                            "(15 mm – " + _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
+                        break;
+
                     case nameof(coverThicknessTextBox):
                         _coverParameter.CoverThickness = value;
 
                         minMaxCoverStepHeightLabel.Text = 
-                            "(4 mm – " + _coverParameter.MaxValueCoverStepHeight + " mm)";
+                            "(4 mm – " + _coverParameter.MaxCoverStepHeight + " mm)";
 
                         minMaxHeightInnerStepCoverLabel.Text =
-                            "(5 mm – " + _coverParameter.MaxValueHeightInnerStepCover + " mm)";
+                            "(5 mm – " + _coverParameter.MaxHeightInnerStepCover + " mm)";
                         break;
 
                     case nameof(heightInnerStepCoverTextBox):

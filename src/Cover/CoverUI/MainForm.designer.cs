@@ -138,6 +138,7 @@ namespace CoverUI
             this.coverDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverDiameterTextBox.TabIndex = 8;
             this.coverDiameterTextBox.Click += new System.EventHandler(this.textBox_Click);
+            this.coverDiameterTextBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // diameterSmallSteppedHoleCoverTextBox
             // 
@@ -146,6 +147,7 @@ namespace CoverUI
             this.diameterSmallSteppedHoleCoverTextBox.Size = new System.Drawing.Size(60, 20);
             this.diameterSmallSteppedHoleCoverTextBox.TabIndex = 9;
             this.diameterSmallSteppedHoleCoverTextBox.Click += new System.EventHandler(this.textBox_Click);
+            this.diameterSmallSteppedHoleCoverTextBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // diameterLargeSteppedCoverHoleTextBox
             // 
@@ -154,6 +156,7 @@ namespace CoverUI
             this.diameterLargeSteppedCoverHoleTextBox.Size = new System.Drawing.Size(60, 20);
             this.diameterLargeSteppedCoverHoleTextBox.TabIndex = 10;
             this.diameterLargeSteppedCoverHoleTextBox.Click += new System.EventHandler(this.textBox_Click);
+            this.diameterLargeSteppedCoverHoleTextBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // smallHoleDiameterTextBox
             // 
@@ -162,6 +165,7 @@ namespace CoverUI
             this.smallHoleDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.smallHoleDiameterTextBox.TabIndex = 11;
             this.smallHoleDiameterTextBox.Click += new System.EventHandler(this.textBox_Click);
+            this.smallHoleDiameterTextBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // outerStepDiameterTextBox
             // 
@@ -170,6 +174,7 @@ namespace CoverUI
             this.outerStepDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.outerStepDiameterTextBox.TabIndex = 12;
             this.outerStepDiameterTextBox.Click += new System.EventHandler(this.textBox_Click);
+            this.outerStepDiameterTextBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // coverThicknessTextBox
             // 
@@ -223,18 +228,18 @@ namespace CoverUI
             this.minMaxCoverDiameterLabel.AutoSize = true;
             this.minMaxCoverDiameterLabel.Location = new System.Drawing.Point(265, 12);
             this.minMaxCoverDiameterLabel.Name = "minMaxCoverDiameterLabel";
-            this.minMaxCoverDiameterLabel.Size = new System.Drawing.Size(89, 13);
+            this.minMaxCoverDiameterLabel.Size = new System.Drawing.Size(92, 13);
             this.minMaxCoverDiameterLabel.TabIndex = 18;
-            this.minMaxCoverDiameterLabel.Text = "(50 mm – 500mm)";
+            this.minMaxCoverDiameterLabel.Text = "(50 mm – 500 mm)";
             // 
             // minMaxDiameterSmallSteppedHoleCoverLabel
             // 
             this.minMaxDiameterSmallSteppedHoleCoverLabel.AutoSize = true;
             this.minMaxDiameterSmallSteppedHoleCoverLabel.Location = new System.Drawing.Point(265, 38);
             this.minMaxDiameterSmallSteppedHoleCoverLabel.Name = "minMaxDiameterSmallSteppedHoleCoverLabel";
-            this.minMaxDiameterSmallSteppedHoleCoverLabel.Size = new System.Drawing.Size(86, 13);
+            this.minMaxDiameterSmallSteppedHoleCoverLabel.Size = new System.Drawing.Size(92, 13);
             this.minMaxDiameterSmallSteppedHoleCoverLabel.TabIndex = 19;
-            this.minMaxDiameterSmallSteppedHoleCoverLabel.Text = "(17mm – 170mm)";
+            this.minMaxDiameterSmallSteppedHoleCoverLabel.Text = "(15 mm – 330 mm)";
             // 
             // minMaxDiameterLargeSteppedCoverHoleLabel
             // 
@@ -243,7 +248,7 @@ namespace CoverUI
             this.minMaxDiameterLargeSteppedCoverHoleLabel.Name = "minMaxDiameterLargeSteppedCoverHoleLabel";
             this.minMaxDiameterLargeSteppedCoverHoleLabel.Size = new System.Drawing.Size(92, 13);
             this.minMaxDiameterLargeSteppedCoverHoleLabel.TabIndex = 20;
-            this.minMaxDiameterLargeSteppedCoverHoleLabel.Text = "(20 mm – 200 mm)";
+            this.minMaxDiameterLargeSteppedCoverHoleLabel.Text = "(20 mm – 335 mm)";
             // 
             // minMaxSmallHoleDiameterLabel
             // 
