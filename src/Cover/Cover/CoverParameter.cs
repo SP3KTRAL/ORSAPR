@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 
-
 namespace Cover
 {
     public class CoverParameter
@@ -41,7 +40,7 @@ namespace Cover
 
                 _coverDiameter = value;
 
-                SmallHoleCircleDiameter = value - 5 - SmallHoleDiameter;
+                SmallHoleCircleDiameter = (value + OuterStepDiameter) / 2;
 
                 MaxSmallHoleDiameter = Math.Round(value / 12.5, 1);
                 MaxOuterStepDiameter = Math.Round(value / (500.0 / 350.0), 1);
@@ -141,7 +140,6 @@ namespace Cover
                 }
 
                 _smallHoleDiameter = value;
-                SmallHoleCircleDiameter = value - 5 - CoverDiameter;
             }
         }
 
@@ -179,6 +177,8 @@ namespace Cover
                 }
 
                 _outerStepDiameter = value;
+
+                SmallHoleCircleDiameter = (CoverDiameter + value) / 2;
 
                 MaxDiameterLargeSteppedCoverHole = value - 15;
 
@@ -284,5 +284,17 @@ namespace Cover
                 _maxHeightInnerStepCover = value;
             }
         }
+
+        //public CoverParameter()
+        //{
+        //    CoverDiameter = 270;
+        //    DiameterSmallSteppedHoleCover = 92;
+        //    DiameterLargeSteppedCoverHole = 115;
+        //    SmallHoleDiameter = 20;
+        //    OuterStepDiameter = 185;
+        //    CoverThickness = 37;
+        //    CoverStepHeight = 22;
+        //    HeightInnerStepCover = 23;
+        //}
     }
 }
