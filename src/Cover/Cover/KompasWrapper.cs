@@ -5,6 +5,7 @@ using Kompas6Constants3D;
 
 namespace Cover
 {
+     //TODO: XML
     public class KompasWrapper
     {
         private ksDocument3D _document3D;

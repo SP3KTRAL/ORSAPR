@@ -1,5 +1,6 @@
 ﻿namespace Cover
 {
+     //TODO: XML
     public class CoverBuilder
     {
         private KompasWrapper _kompasWrapper;

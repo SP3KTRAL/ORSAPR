@@ -6,6 +6,7 @@ using ArgumentException = System.ArgumentException;
 
 namespace CoverUI
 {
+     //TODO: XML
     public partial class MainForm : Form
     {
         readonly CoverParameter _coverParameter;
@@ -87,7 +88,8 @@ namespace CoverUI
                     _coverParameter.CoverDiameter = value;
 
                     minMaxSmallHoleDiameterLabel.Text = 
-                        "(2 mm – " + _coverParameter.MaxSmallHoleDiameter + " mm)";
+                        //TODO:
+                        $@"(2 mm – {_coverParameter.MaxSmallHoleDiameter} mm)";
 
                     minMaxOuterStepDiameterLabel.Text = 
                         "(35 mm – " + _coverParameter.MaxOuterStepDiameter + " mm)";
