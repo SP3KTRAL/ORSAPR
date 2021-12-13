@@ -16,7 +16,7 @@ namespace CoverUI
             _coverParameter = new CoverParameter();
         }
 
-        private void buildButton_Click(object sender, EventArgs e)
+        private void BuildButtonClick(object sender, EventArgs e)
         {
             Control thisTextBox = null;
             try
@@ -47,14 +47,14 @@ namespace CoverUI
             buildButton.Text = "Build";
         }
 
-        private void textBox_Enter(object sender, EventArgs e)
+        private void TextBoxEnter(object sender, EventArgs e)
         {
             pictureBox.Image = 
                 (Image)Properties.Resources.ResourceManager.
                     GetObject(((TextBox)sender).Name);
         }
 
-        private void textBox_Leave(object sender, EventArgs e)
+        private void TextBoxLeave(object sender, EventArgs e)
         {
             try
             {

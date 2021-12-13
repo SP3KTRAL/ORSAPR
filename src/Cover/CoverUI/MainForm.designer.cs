@@ -136,8 +136,8 @@ namespace CoverUI
             this.heightInnerStepCoverTextBox.Name = "heightInnerStepCoverTextBox";
             this.heightInnerStepCoverTextBox.Size = new System.Drawing.Size(60, 20);
             this.heightInnerStepCoverTextBox.TabIndex = 15;
-            this.heightInnerStepCoverTextBox.Enter += new System.EventHandler(this.textBox_Enter);
-            this.heightInnerStepCoverTextBox.Leave += new System.EventHandler(this.textBox_Leave);
+            this.heightInnerStepCoverTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
+            this.heightInnerStepCoverTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // coverStepHeightTextBox
             // 
@@ -145,8 +145,8 @@ namespace CoverUI
             this.coverStepHeightTextBox.Name = "coverStepHeightTextBox";
             this.coverStepHeightTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverStepHeightTextBox.TabIndex = 14;
-            this.coverStepHeightTextBox.Enter += new System.EventHandler(this.textBox_Enter);
-            this.coverStepHeightTextBox.Leave += new System.EventHandler(this.textBox_Leave);
+            this.coverStepHeightTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
+            this.coverStepHeightTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // coverThicknessTextBox
             // 
@@ -154,8 +154,8 @@ namespace CoverUI
             this.coverThicknessTextBox.Name = "coverThicknessTextBox";
             this.coverThicknessTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverThicknessTextBox.TabIndex = 13;
-            this.coverThicknessTextBox.Enter += new System.EventHandler(this.textBox_Enter);
-            this.coverThicknessTextBox.Leave += new System.EventHandler(this.textBox_Leave);
+            this.coverThicknessTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
+            this.coverThicknessTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // outerStepDiameterTextBox
             // 
@@ -163,8 +163,8 @@ namespace CoverUI
             this.outerStepDiameterTextBox.Name = "outerStepDiameterTextBox";
             this.outerStepDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.outerStepDiameterTextBox.TabIndex = 12;
-            this.outerStepDiameterTextBox.Enter += new System.EventHandler(this.textBox_Enter);
-            this.outerStepDiameterTextBox.Leave += new System.EventHandler(this.textBox_Leave);
+            this.outerStepDiameterTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
+            this.outerStepDiameterTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // smallHoleDiameterTextBox
             // 
@@ -172,8 +172,8 @@ namespace CoverUI
             this.smallHoleDiameterTextBox.Name = "smallHoleDiameterTextBox";
             this.smallHoleDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.smallHoleDiameterTextBox.TabIndex = 11;
-            this.smallHoleDiameterTextBox.Enter += new System.EventHandler(this.textBox_Enter);
-            this.smallHoleDiameterTextBox.Leave += new System.EventHandler(this.textBox_Leave);
+            this.smallHoleDiameterTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
+            this.smallHoleDiameterTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // diameterLargeSteppedCoverHoleTextBox
             // 
@@ -181,8 +181,8 @@ namespace CoverUI
             this.diameterLargeSteppedCoverHoleTextBox.Name = "diameterLargeSteppedCoverHoleTextBox";
             this.diameterLargeSteppedCoverHoleTextBox.Size = new System.Drawing.Size(60, 20);
             this.diameterLargeSteppedCoverHoleTextBox.TabIndex = 10;
-            this.diameterLargeSteppedCoverHoleTextBox.Enter += new System.EventHandler(this.textBox_Enter);
-            this.diameterLargeSteppedCoverHoleTextBox.Leave += new System.EventHandler(this.textBox_Leave);
+            this.diameterLargeSteppedCoverHoleTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
+            this.diameterLargeSteppedCoverHoleTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // diameterSmallSteppedHoleCoverTextBox
             // 
@@ -190,8 +190,8 @@ namespace CoverUI
             this.diameterSmallSteppedHoleCoverTextBox.Name = "diameterSmallSteppedHoleCoverTextBox";
             this.diameterSmallSteppedHoleCoverTextBox.Size = new System.Drawing.Size(60, 20);
             this.diameterSmallSteppedHoleCoverTextBox.TabIndex = 9;
-            this.diameterSmallSteppedHoleCoverTextBox.Enter += new System.EventHandler(this.textBox_Enter);
-            this.diameterSmallSteppedHoleCoverTextBox.Leave += new System.EventHandler(this.textBox_Leave);
+            this.diameterSmallSteppedHoleCoverTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
+            this.diameterSmallSteppedHoleCoverTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // coverDiameterTextBox
             // 
@@ -200,8 +200,8 @@ namespace CoverUI
             this.coverDiameterTextBox.Name = "coverDiameterTextBox";
             this.coverDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverDiameterTextBox.TabIndex = 8;
-            this.coverDiameterTextBox.Enter += new System.EventHandler(this.textBox_Enter);
-            this.coverDiameterTextBox.Leave += new System.EventHandler(this.textBox_Leave);
+            this.coverDiameterTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
+            this.coverDiameterTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // pictureBox
             // 
@@ -221,7 +221,7 @@ namespace CoverUI
             this.buildButton.TabIndex = 17;
             this.buildButton.Text = "Build";
             this.buildButton.UseVisualStyleBackColor = true;
-            this.buildButton.Click += new System.EventHandler(this.buildButton_Click);
+            this.buildButton.Click += new System.EventHandler(this.BuildButtonClick);
             // 
             // minMaxCoverDiameterLabel
             // 
