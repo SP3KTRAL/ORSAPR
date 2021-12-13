@@ -6,7 +6,9 @@ namespace Cover.UnitTests
     [TestFixture]
     public class CoverParameterTest
     {
-        [TestCase(TestName = "Проверка геттера и сеттера у свойства CoverDiameter на внесение корректных значений")]
+        [TestCase(TestName = "Проверка геттера и сеттера у свойства" +
+                             " CoverDiameter на внесение корректных" +
+                             " значений")]
         public void TestCoverDiameter_CorrectValue_ResultCorrectSet()
         {
             //Setup
@@ -17,10 +19,12 @@ namespace Cover.UnitTests
             coverParameter.CoverDiameter = correctValue;
 
             //Assert
-            Assert.AreEqual(correctValue, coverParameter.CoverDiameter);
+            Assert.AreEqual(correctValue, 
+                coverParameter.CoverDiameter);
         }
 
-        [TestCase(TestName = "Проверка геттера и сеттера у свойства CoverDiameter на значения меньше 50")]
+        [TestCase(TestName = "Проверка геттера и сеттера у свойства" +
+                             " CoverDiameter на значения меньше 50")]
         public void TestSetCoverDiameter_IncorrectValueLess50_ArgumentException()
         {
             //Setup
@@ -64,12 +68,13 @@ namespace Cover.UnitTests
             coverParameter.DiameterSmallSteppedHoleCover = correctValue;
 
             //Assert
-            Assert.AreEqual(correctValue, coverParameter.DiameterSmallSteppedHoleCover);
+            Assert.AreEqual(correctValue, 
+                coverParameter.DiameterSmallSteppedHoleCover);
         }
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
-                             "DiameterSmallSteppedHoleCover на значения " +
-                             "меньше 15")]
+                             "DiameterSmallSteppedHoleCover на " +
+                             "значения меньше 15")]
         public void TestSetDiameterSmallSteppedHoleCover_IncorrectValueLess15_ArgumentException()
         {
             //Setup
@@ -97,7 +102,8 @@ namespace Cover.UnitTests
             Assert.Throws<ArgumentException>(() =>
             {
                 //Act
-                coverParameter.DiameterSmallSteppedHoleCover = incorrectValue;
+                coverParameter.DiameterSmallSteppedHoleCover = 
+                    incorrectValue;
             });
         }
 
@@ -114,7 +120,8 @@ namespace Cover.UnitTests
             coverParameter.MaxDiameterSmallSteppedHoleCover = correctValue;
 
             //Assert
-            Assert.AreEqual(correctValue, coverParameter.MaxDiameterSmallSteppedHoleCover);
+            Assert.AreEqual(correctValue, 
+                coverParameter.MaxDiameterSmallSteppedHoleCover);
         }
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
@@ -130,7 +137,8 @@ namespace Cover.UnitTests
             Assert.Throws<ArgumentException>(() =>
             {
                 //Act
-                coverParameter.MaxDiameterSmallSteppedHoleCover = incorrectValue;
+                coverParameter.MaxDiameterSmallSteppedHoleCover = 
+                    incorrectValue;
             });
         }
 
@@ -147,7 +155,8 @@ namespace Cover.UnitTests
             coverParameter.DiameterLargeSteppedCoverHole = correctValue;
 
             //Assert
-            Assert.AreEqual(correctValue, coverParameter.DiameterLargeSteppedCoverHole);
+            Assert.AreEqual(correctValue, 
+                coverParameter.DiameterLargeSteppedCoverHole);
         }
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
@@ -163,7 +172,8 @@ namespace Cover.UnitTests
             Assert.Throws<ArgumentException>(() =>
             {
                 //Act
-                coverParameter.DiameterLargeSteppedCoverHole = incorrectValue;
+                coverParameter.DiameterLargeSteppedCoverHole = 
+                    incorrectValue;
             });
         }
 
@@ -180,7 +190,8 @@ namespace Cover.UnitTests
             Assert.Throws<ArgumentException>(() =>
             {
                 //Act
-                coverParameter.DiameterLargeSteppedCoverHole = incorrectValue;
+                coverParameter.DiameterLargeSteppedCoverHole = 
+                    incorrectValue;
             });
         }
 
@@ -194,10 +205,12 @@ namespace Cover.UnitTests
             var coverParameter = new CoverParameter();
 
             //Act
-            coverParameter.MaxDiameterLargeSteppedCoverHole = correctValue;
+            coverParameter.MaxDiameterLargeSteppedCoverHole = 
+                correctValue;
 
             //Assert
-            Assert.AreEqual(correctValue, coverParameter.MaxDiameterLargeSteppedCoverHole);
+            Assert.AreEqual(correctValue, 
+                coverParameter.MaxDiameterLargeSteppedCoverHole);
         }
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
@@ -213,7 +226,8 @@ namespace Cover.UnitTests
             Assert.Throws<ArgumentException>(() =>
             {
                 //Act
-                coverParameter.MaxDiameterLargeSteppedCoverHole = incorrectValue;
+                coverParameter.MaxDiameterLargeSteppedCoverHole = 
+                    incorrectValue;
             });
         }
 
@@ -229,7 +243,8 @@ namespace Cover.UnitTests
             coverParameter.SmallHoleDiameter = correctValue;
 
             //Assert
-            Assert.AreEqual(correctValue, coverParameter.SmallHoleDiameter);
+            Assert.AreEqual(correctValue, 
+                coverParameter.SmallHoleDiameter);
         }
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
@@ -277,7 +292,8 @@ namespace Cover.UnitTests
             coverParameter.MaxSmallHoleDiameter = correctValue;
 
             //Assert
-            Assert.AreEqual(correctValue, coverParameter.MaxSmallHoleDiameter);
+            Assert.AreEqual(correctValue, 
+                coverParameter.MaxSmallHoleDiameter);
         }
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
@@ -309,7 +325,8 @@ namespace Cover.UnitTests
             coverParameter.SmallHoleCircleDiameter = correctValue;
 
             //Assert
-            Assert.AreEqual(correctValue, coverParameter.SmallHoleCircleDiameter);
+            Assert.AreEqual(correctValue, 
+                coverParameter.SmallHoleCircleDiameter);
         }
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
@@ -324,7 +341,8 @@ namespace Cover.UnitTests
             coverParameter.OuterStepDiameter = correctValue;
 
             //Assert
-            Assert.AreEqual(correctValue, coverParameter.OuterStepDiameter);
+            Assert.AreEqual(correctValue, 
+                coverParameter.OuterStepDiameter);
         }
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
