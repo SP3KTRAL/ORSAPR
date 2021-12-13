@@ -23,28 +23,13 @@ namespace Cover.UnitTests
                 coverParameter.CoverDiameter);
         }
 
-        [TestCase(TestName = "Проверка геттера и сеттера у свойства" +
+        [TestCase(10.0, TestName = "Проверка геттера и сеттера у свойства" +
                              " CoverDiameter на значения меньше 50")]
-        public void TestSetCoverDiameter_IncorrectValueLess50_ArgumentException()
+        [TestCase(510.0, TestName = "Проверка геттера и сеттера у свойства" +
+                                 " CoverDiameter на значения больше 500")]
+        public void TestSetCoverDiameter_IncorrectValue_ArgumentException(double incorrectValue)
         {
             //Setup
-            var incorrectValue = 10.0;
-            var coverParameter = new CoverParameter();
-
-            //Assert
-            Assert.Throws<ArgumentException>(() =>
-            {
-                //Act
-                coverParameter.CoverDiameter = incorrectValue;
-            });
-        }
-
-        [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
-                             "CoverDiameter на значения больше 500")]
-        public void TestSetCoverDiameter_IncorrectValueMore500_ArgumentException()
-        {
-            //Setup
-            var incorrectValue = 510.0;
             var coverParameter = new CoverParameter();
 
             //Assert
@@ -72,13 +57,15 @@ namespace Cover.UnitTests
                 coverParameter.DiameterSmallSteppedHoleCover);
         }
 
-        [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
+        [TestCase(10.0, TestName = "Проверка геттера и сеттера у свойства " +
                              "DiameterSmallSteppedHoleCover на " +
                              "значения меньше 15")]
-        public void TestSetDiameterSmallSteppedHoleCover_IncorrectValueLess15_ArgumentException()
+        [TestCase(510.0, TestName = "Проверка геттера и сеттера у свойства " +
+                             "DiameterSmallSteppedHoleCover на " +
+                             "значения больше максимального")]
+        public void TestSetDiameterSmallSteppedHoleCover_IncorrectValue_ArgumentException(double incorrectValue)
         {
             //Setup
-            var incorrectValue = 10.0;
             var coverParameter = new CoverParameter();
 
             //Assert
@@ -86,24 +73,6 @@ namespace Cover.UnitTests
             {
                 //Act
                 coverParameter.CoverDiameter = incorrectValue;
-            });
-        }
-
-        [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
-                             "DiameterSmallSteppedHoleCover на " +
-                             "значения больше максимального")]
-        public void TestSetDiameterSmallSteppedHoleCover_IncorrectValueMoreMax_ArgumentException()
-        {
-            //Setup
-            var incorrectValue = 510.0;
-            var coverParameter = new CoverParameter();
-
-            //Assert
-            Assert.Throws<ArgumentException>(() =>
-            {
-                //Act
-                coverParameter.DiameterSmallSteppedHoleCover = 
-                    incorrectValue;
             });
         }
 
@@ -159,31 +128,15 @@ namespace Cover.UnitTests
                 coverParameter.DiameterLargeSteppedCoverHole);
         }
 
-        [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
+        [TestCase(10.0, TestName = "Проверка геттера и сеттера у свойства " +
                              "DiameterLargeSteppedCoverHole на " +
                              "значение меньше 20")]
-        public void TestSetDiameterLargeSteppedCoverHole_IncorrectValueLess20_ArgumentException()
-        {
-            //Setup
-            var incorrectValue = 10.0;
-            var coverParameter = new CoverParameter();
-
-            //Assert
-            Assert.Throws<ArgumentException>(() =>
-            {
-                //Act
-                coverParameter.DiameterLargeSteppedCoverHole = 
-                    incorrectValue;
-            });
-        }
-
-        [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
+        [TestCase(500.0, TestName = "Проверка геттера и сеттера у свойства " +
                              "DiameterLargeSteppedCoverHole на " +
                              "значение больше максимального")]
-        public void TestSetDiameterLargeSteppedCoverHole_IncorrectValueMoreMax_ArgumentException()
+        public void TestSetDiameterLargeSteppedCoverHole_IncorrectValue_ArgumentException(double incorrectValue)
         {
             //Setup
-            var incorrectValue = 500.0;
             var coverParameter = new CoverParameter();
 
             //Assert
@@ -247,29 +200,14 @@ namespace Cover.UnitTests
                 coverParameter.SmallHoleDiameter);
         }
 
-        [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
+        [TestCase(1.0, TestName = "Проверка геттера и сеттера у свойства " +
                              "SmallHoleDiameter на значение меньше 2")]
-        public void TestSetSmallHoleDiameter_IncorrectValueLess2_ArgumentException()
-        {
-            //Setup
-            var incorrectValue = 1.0;
-            var coverParameter = new CoverParameter();
-
-            //Assert
-            Assert.Throws<ArgumentException>(() =>
-            {
-                //Act
-                coverParameter.SmallHoleDiameter = incorrectValue;
-            });
-        }
-
-        [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
+        [TestCase(100.0, TestName = "Проверка геттера и сеттера у свойства " +
                              "SmallHoleDiameter на значение больше" +
                              " максимального")]
-        public void TestSetSmallHoleDiameter_IncorrectValueMoreMax_ArgumentException()
+        public void TestSetSmallHoleDiameter_IncorrectValue_ArgumentException(double incorrectValue)
         {
             //Setup
-            var incorrectValue = 100.0;
             var coverParameter = new CoverParameter();
 
             //Assert
