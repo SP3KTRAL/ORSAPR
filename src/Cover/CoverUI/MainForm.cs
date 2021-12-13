@@ -8,8 +8,7 @@ namespace CoverUI
 {
     public partial class MainForm : Form
     {
-
-        CoverParameter _coverParameter;
+        readonly CoverParameter _coverParameter;
 
         public MainForm()
         {
@@ -19,9 +18,6 @@ namespace CoverUI
 
         private void buildButton_Click(object sender, EventArgs e)
         {
-            buildButton.Text = "Building...";
-            buildButton.Enabled = false;
-
             Control thisTextBox = null;
             try
             {
@@ -37,10 +33,11 @@ namespace CoverUI
             catch (Exception exception)
             {
                 ShowMessage(thisTextBox, exception.Message);
-                buildButton.Enabled = true;
-                buildButton.Text = "Build";
                 return;
             }
+
+            buildButton.Text = "Building...";
+            buildButton.Enabled = false;
 
             CoverBuilder coverBuilder = new CoverBuilder();
 
@@ -52,7 +49,9 @@ namespace CoverUI
 
         private void textBox_Enter(object sender, EventArgs e)
         {
-            pictureBox.Image = (Image)Properties.Resources.ResourceManager.GetObject(((TextBox)sender).Name);
+            pictureBox.Image = 
+                (Image)Properties.Resources.ResourceManager.
+                    GetObject(((TextBox)sender).Name);
         }
 
         private void textBox_Leave(object sender, EventArgs e)
@@ -71,9 +70,14 @@ namespace CoverUI
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
         private void ChangeParameter(object sender)
         {
-            ((TextBox)sender).Text = ((TextBox)sender).Text.Replace('.', ',');
+            ((TextBox)sender).Text = 
+                ((TextBox)sender).Text.Replace('.', ',');
 
             double value = Convert.ToDouble(((TextBox) sender).Text);
             
@@ -89,10 +93,12 @@ namespace CoverUI
                         "(35 mm – " + _coverParameter.MaxOuterStepDiameter + " mm)";
 
                     minMaxDiameterLargeSteppedCoverHoleLabel.Text =
-                        "(20 mm – " + _coverParameter.MaxDiameterLargeSteppedCoverHole + " mm)";
+                        "(20 mm – " + 
+                        _coverParameter.MaxDiameterLargeSteppedCoverHole + " mm)";
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                        "(15 mm – " + _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
+                        "(15 mm – " + 
+                        _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
                     break;
 
                 case nameof(diameterSmallSteppedHoleCoverTextBox):
@@ -103,7 +109,8 @@ namespace CoverUI
                     _coverParameter.DiameterLargeSteppedCoverHole = value;
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text = 
-                        "(15 mm – " + _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
+                        "(15 mm – " + 
+                        _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
                     break;
 
                 case nameof(smallHoleDiameterTextBox):
@@ -114,10 +121,12 @@ namespace CoverUI
                     _coverParameter.OuterStepDiameter = value;
 
                     minMaxDiameterLargeSteppedCoverHoleLabel.Text =
-                        "(20 mm – " + _coverParameter.MaxDiameterLargeSteppedCoverHole + " mm)";
+                        "(20 mm – " + 
+                        _coverParameter.MaxDiameterLargeSteppedCoverHole + " mm)";
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                        "(15 mm – " + _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
+                        "(15 mm – " + 
+                        _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
                     break;
 
                 case nameof(coverThicknessTextBox):
@@ -127,7 +136,8 @@ namespace CoverUI
                         "(4 mm – " + _coverParameter.MaxCoverStepHeight + " mm)";
 
                     minMaxHeightInnerStepCoverLabel.Text =
-                        "(5 mm – " + _coverParameter.MaxHeightInnerStepCover + " mm)";
+                        "(5 mm – " + 
+                        _coverParameter.MaxHeightInnerStepCover + " mm)";
                     break;
 
                 case nameof(heightInnerStepCoverTextBox):
@@ -141,6 +151,11 @@ namespace CoverUI
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="message"></param>
         private static void ShowMessage(object sender, string message)
         {
             MessageBox.Show(message, "Error",

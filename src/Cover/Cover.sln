@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoverUI", "CoverUI\CoverUI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cover", "Cover\Cover.csproj", "{14E597B7-0BAD-4DF7-888F-957C35C82559}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cover.UnitTests", "Cover.UnitTests\Cover.UnitTests.csproj", "{2143127A-6A51-496A-88DC-9A411C9B7701}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{14E597B7-0BAD-4DF7-888F-957C35C82559}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14E597B7-0BAD-4DF7-888F-957C35C82559}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14E597B7-0BAD-4DF7-888F-957C35C82559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2143127A-6A51-496A-88DC-9A411C9B7701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2143127A-6A51-496A-88DC-9A411C9B7701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2143127A-6A51-496A-88DC-9A411C9B7701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2143127A-6A51-496A-88DC-9A411C9B7701}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

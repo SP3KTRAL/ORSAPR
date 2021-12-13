@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Kompas6API5;
-
-namespace Cover
+﻿namespace Cover
 {
     public class CoverBuilder
     {
@@ -16,7 +9,8 @@ namespace Cover
             _kompasWrapper = new KompasWrapper();
 
             _kompasWrapper.CreateCircle(parameters.CoverDiameter);
-            _kompasWrapper.ExtrudeCircle(parameters.CoverThickness - parameters.CoverStepHeight);
+            _kompasWrapper.ExtrudeCircle(parameters.CoverThickness - 
+                                         parameters.CoverStepHeight);
 
             _kompasWrapper.CreateCircle(parameters.OuterStepDiameter);
             _kompasWrapper.ExtrudeCircle(parameters.CoverThickness);
@@ -33,7 +27,8 @@ namespace Cover
 
             for (int i = 0; i < 6; i++)
             {
-                _kompasWrapper.CreateCircle(parameters.SmallHoleDiameter, points[i,0], points[i,1]);
+                _kompasWrapper.CreateCircle(parameters.SmallHoleDiameter,
+                    points[i,0], points[i,1]);
                 _kompasWrapper.CutExtrudeCircle(parameters.CoverThickness);
             }
         }

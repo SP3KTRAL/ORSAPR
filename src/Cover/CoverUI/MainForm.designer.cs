@@ -327,7 +327,7 @@ namespace CoverUI
             this.Controls.Add(this.diameterSmallSteppedHoleCoverLabel);
             this.Controls.Add(this.coverDiameterLabel);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Cover Builder";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
