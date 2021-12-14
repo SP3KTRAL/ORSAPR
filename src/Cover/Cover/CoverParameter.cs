@@ -110,8 +110,7 @@ namespace Cover
                 }
 
                 if (DiameterLargeSteppedCoverHole == 0 || 
-                    DiameterLargeSteppedCoverHole > 
-                    MaxDiameterLargeSteppedCoverHole)
+                    DiameterLargeSteppedCoverHole > MaxDiameterLargeSteppedCoverHole)
                 {
                     MaxDiameterSmallSteppedHoleCover = 
                         MaxDiameterLargeSteppedCoverHole - 5;
@@ -271,8 +270,7 @@ namespace Cover
                 MaxDiameterLargeSteppedCoverHole = value - 15;
 
                 if (DiameterLargeSteppedCoverHole == 0 || 
-                    DiameterLargeSteppedCoverHole > 
-                    MaxDiameterLargeSteppedCoverHole)
+                    DiameterLargeSteppedCoverHole > MaxDiameterLargeSteppedCoverHole)
                 {
                     MaxDiameterSmallSteppedHoleCover = 
                         MaxDiameterLargeSteppedCoverHole - 5;

@@ -120,6 +120,10 @@
       <Project>{14e597b7-0bad-4df7-888f-957c35c82559}</Project>
       <Name>Cover</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KompasWrapper\KompasWrapper.csproj">
+      <Project>{5193213b-610a-4f37-b181-47cd43973078}</Project>
+      <Name>KompasWrapper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

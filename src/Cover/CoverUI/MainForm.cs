@@ -2,21 +2,36 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Cover;
+using KompasWrapper;
 using ArgumentException = System.ArgumentException;
 
 namespace CoverUI
 {
-     //TODO: XML
+    //TODO: XML
+    /// <summary>
+    /// Форма для задания параметров модели.
+    /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Поле параметров.
+        /// </summary>
         readonly CoverParameter _coverParameter;
 
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
             _coverParameter = new CoverParameter();
         }
 
+        /// <summary>
+        /// Событие, при нажатии на кнопку "Build".
+        /// </summary>
+        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
+        /// <param name="e">Передает объект, относящийся к обрабатываемому событию.</param>
         private void BuildButtonClick(object sender, EventArgs e)
         {
             Control thisTextBox = null;
@@ -48,6 +63,11 @@ namespace CoverUI
             buildButton.Text = "Build";
         }
 
+        /// <summary>
+        /// Событие, при наведении фокуса на TextBox.
+        /// </summary>
+        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
+        /// <param name="e">Передает объект, относящийся к обрабатываемому событию.</param>
         private void TextBoxEnter(object sender, EventArgs e)
         {
             pictureBox.Image = 
@@ -55,6 +75,11 @@ namespace CoverUI
                     GetObject(((TextBox)sender).Name);
         }
 
+        /// <summary>
+        /// Событие, при потери фокуса с TextBox.
+        /// </summary>
+        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
+        /// <param name="e">Передает объект, относящийся к обрабатываемому событию.</param>
         private void TextBoxLeave(object sender, EventArgs e)
         {
             try
@@ -72,9 +97,9 @@ namespace CoverUI
         }
 
         /// <summary>
-        /// 
+        /// Заносит значение из TextBox в поле параметров.
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
         private void ChangeParameter(object sender)
         {
             ((TextBox)sender).Text = 
@@ -87,20 +112,18 @@ namespace CoverUI
                 case nameof(coverDiameterTextBox):
                     _coverParameter.CoverDiameter = value;
 
-                    minMaxSmallHoleDiameterLabel.Text = 
+                    minMaxSmallHoleDiameterLabel.Text =
                         //TODO:
-                        $@"(2 mm – {_coverParameter.MaxSmallHoleDiameter} mm)";
+                        RenameTextLabel(2, _coverParameter.MaxSmallHoleDiameter);
 
-                    minMaxOuterStepDiameterLabel.Text = 
-                        "(35 mm – " + _coverParameter.MaxOuterStepDiameter + " mm)";
+                    minMaxOuterStepDiameterLabel.Text =
+                        RenameTextLabel(35, _coverParameter.MaxOuterStepDiameter);
 
                     minMaxDiameterLargeSteppedCoverHoleLabel.Text =
-                        "(20 mm – " + 
-                        _coverParameter.MaxDiameterLargeSteppedCoverHole + " mm)";
+                        RenameTextLabel(20, _coverParameter.MaxDiameterLargeSteppedCoverHole);
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                        "(15 mm – " + 
-                        _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
+                        RenameTextLabel(15, _coverParameter.MaxDiameterSmallSteppedHoleCover);
                     break;
 
                 case nameof(diameterSmallSteppedHoleCoverTextBox):
@@ -110,9 +133,8 @@ namespace CoverUI
                 case nameof(diameterLargeSteppedCoverHoleTextBox):
                     _coverParameter.DiameterLargeSteppedCoverHole = value;
 
-                    minMaxDiameterSmallSteppedHoleCoverLabel.Text = 
-                        "(15 mm – " + 
-                        _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
+                    minMaxDiameterSmallSteppedHoleCoverLabel.Text =
+                        RenameTextLabel(15, _coverParameter.MaxDiameterSmallSteppedHoleCover);
                     break;
 
                 case nameof(smallHoleDiameterTextBox):
@@ -123,23 +145,20 @@ namespace CoverUI
                     _coverParameter.OuterStepDiameter = value;
 
                     minMaxDiameterLargeSteppedCoverHoleLabel.Text =
-                        "(20 mm – " + 
-                        _coverParameter.MaxDiameterLargeSteppedCoverHole + " mm)";
+                        RenameTextLabel(20, _coverParameter.MaxDiameterLargeSteppedCoverHole);
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                        "(15 mm – " + 
-                        _coverParameter.MaxDiameterSmallSteppedHoleCover + " mm)";
+                        RenameTextLabel(15, _coverParameter.MaxDiameterSmallSteppedHoleCover);
                     break;
 
                 case nameof(coverThicknessTextBox):
                     _coverParameter.CoverThickness = value;
 
-                    minMaxCoverStepHeightLabel.Text = 
-                        "(4 mm – " + _coverParameter.MaxCoverStepHeight + " mm)";
+                    minMaxCoverStepHeightLabel.Text =
+                        RenameTextLabel(4, _coverParameter.MaxCoverStepHeight);
 
-                    minMaxHeightInnerStepCoverLabel.Text =
-                        "(5 mm – " + 
-                        _coverParameter.MaxHeightInnerStepCover + " mm)";
+                    minMaxHeightInnerStepCoverLabel.Text = 
+                        RenameTextLabel(5, _coverParameter.MaxHeightInnerStepCover);
                     break;
 
                 case nameof(heightInnerStepCoverTextBox):
@@ -154,10 +173,21 @@ namespace CoverUI
         }
 
         /// <summary>
-        /// 
+        /// Меняет текст для Label.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="message"></param>
+        /// <param name="min">Минимальное значение.</param>
+        /// <param name="max">Максимальное значение.</param>
+        /// <returns>Строка, с новыми значениями минимального и максимального.</returns>
+        private string RenameTextLabel(int min, double max)
+        {
+            return $@"({min} mm - {max} mm)";
+        }
+
+        /// <summary>
+        /// Выводит сообщение об ошибке.
+        /// </summary>
+        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
+        /// <param name="message">Сообщение ошибки.</param>
         private static void ShowMessage(object sender, string message)
         {
             MessageBox.Show(message, "Error",

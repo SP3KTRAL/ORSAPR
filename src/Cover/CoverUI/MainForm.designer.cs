@@ -90,9 +90,9 @@ namespace CoverUI
             this.smallHoleDiameterLabel.AutoSize = true;
             this.smallHoleDiameterLabel.Location = new System.Drawing.Point(12, 90);
             this.smallHoleDiameterLabel.Name = "smallHoleDiameterLabel";
-            this.smallHoleDiameterLabel.Size = new System.Drawing.Size(105, 13);
+            this.smallHoleDiameterLabel.Size = new System.Drawing.Size(164, 13);
             this.smallHoleDiameterLabel.TabIndex = 3;
-            this.smallHoleDiameterLabel.Text = "Small Hole Diameter:";
+            this.smallHoleDiameterLabel.Text = "PositionSmallHole Hole Diameter:";
             // 
             // outerStepDiameterLabel
             // 

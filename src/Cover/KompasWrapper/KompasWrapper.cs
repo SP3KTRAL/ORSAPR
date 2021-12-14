@@ -3,19 +3,50 @@ using System.Runtime.InteropServices;
 using Kompas6API5;
 using Kompas6Constants3D;
 
-namespace Cover
+namespace KompasWrapper
 {
-     //TODO: XML
+    //TODO: XML
+    /// <summary>
+    /// Класс для связи с Компасом.
+    /// </summary>
     public class KompasWrapper
     {
+        /// <summary>
+        /// Поле 3D документа.
+        /// </summary>
         private ksDocument3D _document3D;
+
+        /// <summary>
+        /// Поле 2D документа.
+        /// </summary>
         private ksDocument2D _document2D;
+
+        /// <summary>
+        /// Интерфейс детали.
+        /// </summary>
         private ksPart _part;
+
+        /// <summary>
+        /// Поле с текущим эскизом.
+        /// </summary>
         private ksEntity _sketch;
+
+        /// <summary>
+        /// Интерфейс свойств эскиза.
+        /// </summary>
         private ksSketchDefinition _sketchDefinition;
+
+        /// <summary>
+        /// Поле текущего плана.
+        /// </summary>
         private ksEntity _currentPlan;
 
-        public void Small(ref double[,] points, double diameter)
+        /// <summary>
+        /// Расставляет малые отверстия на плоскости по кругу.
+        /// </summary>
+        /// <param name="points">Координаты центров малых отверстий.</param>
+        /// <param name="diameter">Диаметр малых отверстий.</param>
+        public void PositionSmallHole(ref double[,] points, double diameter)
         {
             for (int i = 0; i < 6; i++)
             {
@@ -24,8 +55,15 @@ namespace Cover
             }
         }
 
+        /// <summary>
+        /// Главный инерфейс.
+        /// </summary>
         public KompasObject Kompas { get; }
 
+        /// <summary>
+        /// Вырезание по окружности выдавливанием.
+        /// </summary>
+        /// <param name="depth">Глубина выдавливания.</param>
         public void CutExtrudeCircle(double depth)
         {
             var entityExtrude = 
@@ -45,6 +83,10 @@ namespace Cover
             entityExtrude.Create();
         }
 
+        /// <summary>
+        /// Выдавливание по окружности.
+        /// </summary>
+        /// <param name="depth">Глубина выдавливания.</param>
         public void ExtrudeCircle(double depth)
         {
             var entityExtrude = 
@@ -65,6 +107,12 @@ namespace Cover
             entityExtrude.Create();
         }
 
+        /// <summary>
+        /// Построение окружности.
+        /// </summary>
+        /// <param name="diameter">Диаметр окуружности.</param>
+        /// <param name="xc">Координата центра окружности по x.</param>
+        /// <param name="yc">Координата центра окружности по y.</param>
         public void CreateCircle(double diameter, double xc = 0, double yc = 0)
         {
             _currentPlan = (ksEntity)_part.GetDefaultEntity(1);
@@ -79,6 +127,10 @@ namespace Cover
             _sketchDefinition.EndEdit();
         }
 
+        /// <summary>
+        /// Открытие Компас.
+        /// </summary>
+        /// <returns>Указатель на Компас.</returns>
         private KompasObject OpenKompas()
         {
             if (!IsOpenKompass(out var kompas))
@@ -91,6 +143,11 @@ namespace Cover
             return kompas;
         }
 
+        /// <summary>
+        /// Получение открытого Компаса.
+        /// </summary>
+        /// <param name="kompasObject">Объект Компаса.</param>
+        /// <returns>Открыт или закрыт Компас.</returns>
         private bool IsOpenKompass(out KompasObject kompasObject)
         {
             try
@@ -107,13 +164,16 @@ namespace Cover
             }
         }
 
-        private bool CreateOpenKompas(out KompasObject kompasObject)
+        /// <summary>
+        /// Открытие Компас.
+        /// </summary>
+        /// <param name="kompasObject">Объект Компас.</param>
+        private void CreateOpenKompas(out KompasObject kompasObject)
         {
             try
             {
                 Type type = Type.GetTypeFromProgID("KOMPAS.Application.5");
                 kompasObject = (KompasObject)Activator.CreateInstance(type);
-                return true;
             }
             catch (COMException)
             {
@@ -121,6 +181,9 @@ namespace Cover
             }
         }
 
+        /// <summary>
+        /// Создание локумента.
+        /// </summary>
         private void CreateDocument()
         {
             _document3D = (ksDocument3D)Kompas.Document3D();
@@ -129,6 +192,9 @@ namespace Cover
             _part = (ksPart)_document3D.GetPart((int)Part_Type.pTop_Part);
         }
 
+        /// <summary>
+        /// Конструктор.
+        /// </summary>
         public KompasWrapper()
         {
             Kompas = OpenKompas();

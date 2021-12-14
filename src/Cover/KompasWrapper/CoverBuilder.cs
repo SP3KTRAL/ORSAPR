@@ -1,10 +1,22 @@
-﻿namespace Cover
+﻿using Cover;
+
+namespace KompasWrapper
 {
      //TODO: XML
+     /// <summary>
+     /// Класс для постройки модели.
+     /// </summary>
     public class CoverBuilder
     {
+        /// <summary>
+        /// Ссылка на Компас.
+        /// </summary>
         private KompasWrapper _kompasWrapper;
 
+        /// <summary>
+        /// Метод для построения модели.
+        /// </summary>
+        /// <param name="parameters">Параметры модели.</param>
         public void CreateModel(CoverParameter parameters)
         {
             _kompasWrapper = new KompasWrapper();
@@ -24,7 +36,7 @@
 
             double[,] points = {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}};
 
-            _kompasWrapper.Small(ref points, parameters.SmallHoleCircleDiameter);
+            _kompasWrapper.PositionSmallHole(ref points, parameters.SmallHoleCircleDiameter);
 
             for (int i = 0; i < 6; i++)
             {
