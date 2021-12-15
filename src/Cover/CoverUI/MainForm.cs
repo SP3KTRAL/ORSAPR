@@ -48,6 +48,7 @@ namespace CoverUI
             }
             catch (Exception exception)
             {
+                ((TextBox)thisTextBox).BackColor = Color.MistyRose;
                 ShowMessage(thisTextBox, exception.Message);
                 return;
             }
@@ -85,13 +86,16 @@ namespace CoverUI
             try
             {
                 ChangeParameter(sender);
+                ((TextBox)sender).BackColor = Color.White;
             }
             catch (FormatException exception)
             {
+                ((TextBox)sender).BackColor = Color.MistyRose;
                 ShowMessage(sender, exception.Message);
             }
             catch (ArgumentException exception)
             {
+                ((TextBox)sender).BackColor = Color.MistyRose;
                 ShowMessage(sender, exception.Message);
             }
         }
@@ -114,16 +118,20 @@ namespace CoverUI
 
                     minMaxSmallHoleDiameterLabel.Text =
                         //TODO:
-                        RenameTextLabel(2, _coverParameter.MaxSmallHoleDiameter);
+                        RenameTextLabel(2, 
+                            _coverParameter.MaxSmallHoleDiameter);
 
                     minMaxOuterStepDiameterLabel.Text =
-                        RenameTextLabel(35, _coverParameter.MaxOuterStepDiameter);
+                        RenameTextLabel(35, 
+                            _coverParameter.MaxOuterStepDiameter);
 
                     minMaxDiameterLargeSteppedCoverHoleLabel.Text =
-                        RenameTextLabel(20, _coverParameter.MaxDiameterLargeSteppedCoverHole);
+                        RenameTextLabel(20, 
+                            _coverParameter.MaxDiameterLargeSteppedCoverHole);
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                        RenameTextLabel(15, _coverParameter.MaxDiameterSmallSteppedHoleCover);
+                        RenameTextLabel(15, 
+                            _coverParameter.MaxDiameterSmallSteppedHoleCover);
                     break;
 
                 case nameof(diameterSmallSteppedHoleCoverTextBox):
@@ -134,7 +142,8 @@ namespace CoverUI
                     _coverParameter.DiameterLargeSteppedCoverHole = value;
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                        RenameTextLabel(15, _coverParameter.MaxDiameterSmallSteppedHoleCover);
+                        RenameTextLabel(15, 
+                            _coverParameter.MaxDiameterSmallSteppedHoleCover);
                     break;
 
                 case nameof(smallHoleDiameterTextBox):
@@ -145,20 +154,24 @@ namespace CoverUI
                     _coverParameter.OuterStepDiameter = value;
 
                     minMaxDiameterLargeSteppedCoverHoleLabel.Text =
-                        RenameTextLabel(20, _coverParameter.MaxDiameterLargeSteppedCoverHole);
+                        RenameTextLabel(20, 
+                            _coverParameter.MaxDiameterLargeSteppedCoverHole);
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                        RenameTextLabel(15, _coverParameter.MaxDiameterSmallSteppedHoleCover);
+                        RenameTextLabel(15, 
+                            _coverParameter.MaxDiameterSmallSteppedHoleCover);
                     break;
 
                 case nameof(coverThicknessTextBox):
                     _coverParameter.CoverThickness = value;
 
                     minMaxCoverStepHeightLabel.Text =
-                        RenameTextLabel(4, _coverParameter.MaxCoverStepHeight);
+                        RenameTextLabel(4, 
+                            _coverParameter.MaxCoverStepHeight);
 
                     minMaxHeightInnerStepCoverLabel.Text = 
-                        RenameTextLabel(5, _coverParameter.MaxHeightInnerStepCover);
+                        RenameTextLabel(5, 
+                            _coverParameter.MaxHeightInnerStepCover);
                     break;
 
                 case nameof(heightInnerStepCoverTextBox):

@@ -87,9 +87,9 @@ namespace Cover
             {
                 if (value < 50 || value > 500)
                 {
-                    throw new ArgumentException("Wrong cover diameter = " 
-                                                + value + " " + "mm. Range: 50 " 
-                                                + "mm - 500 mm!");
+                    throw new ArgumentException("Wrong cover diameter " +
+                                                $@"= {value} mm. Range: " +
+                                                "50 mm - 500 mm!");
                 }
 
                 _coverDiameter = value;
@@ -134,9 +134,9 @@ namespace Cover
                 if (value < 15 || value > MaxDiameterSmallSteppedHoleCover)
                 {
                     throw new ArgumentException(
-                        "Wrong diameter small stepped hole cover = " 
-                        + value + " " + "mm. Range: 15 mm - " +
-                        MaxDiameterSmallSteppedHoleCover + " mm!");
+                        "Wrong diameter small stepped hole cover = " +
+                        $@"{value} mm. Range: 15 mm - " +
+                        $@"{MaxDiameterSmallSteppedHoleCover} mm!");
                 }
 
                 _diameterSmallSteppedHoleCover = value;
@@ -171,9 +171,9 @@ namespace Cover
                 if (value < 20 || value > MaxDiameterLargeSteppedCoverHole)
                 {
                     throw new ArgumentException(
-                        "Wrong diameter large stepped cover hole = " +
-                        value + " " + "mm. Range: 20 mm - " + 
-                        MaxDiameterLargeSteppedCoverHole + " mm!");
+                        "Wrong diameter large stepped cover " +
+                        $@"hole = {value} mm. Range: 20 mm - " +
+                        $@"{MaxDiameterLargeSteppedCoverHole} mm!");
                 }
 
                 _diameterLargeSteppedCoverHole = value;
@@ -210,8 +210,8 @@ namespace Cover
                 if (value < 2 || value > MaxSmallHoleDiameter)
                 {
                     throw new ArgumentException(
-                        "Wrong small hole diameter = " + value + " " +
-                        "mm. Range: 2 mm - " + MaxSmallHoleDiameter + " mm!");
+                        $@"Wrong small hole diameter = {value} " +
+                        $@"mm. Range: 2 mm - {MaxSmallHoleDiameter} mm!");
                 }
 
                 _smallHoleDiameter = value;
@@ -259,8 +259,8 @@ namespace Cover
                 if (value < 35 || value > MaxOuterStepDiameter)
                 {
                     throw new ArgumentException(
-                        "Wrong outer step diameter = " + value + " " +
-                        "mm. Range: 35 mm - " + MaxOuterStepDiameter + " mm!");
+                        $@"Wrong outer step diameter = {value} " +
+                        $@"mm. Range: 35 mm - {MaxOuterStepDiameter} mm!");
                 }
 
                 _outerStepDiameter = value;
@@ -310,9 +310,9 @@ namespace Cover
             {
                 if (value < 6  || value > 60)
                 {
-                    throw new ArgumentException("Wrong cover thickness = "
-                                                + value + " mm. Range: 6 mm - 60" 
-                                                + " mm!");
+                    throw new ArgumentException(
+                        $@"Wrong cover thickness = {value} " +
+                        "mm. Range: 6 mm - 60 mm!");
                 }
 
                 _coverThickness = value;
@@ -332,10 +332,9 @@ namespace Cover
             {
                 if (value < 4 || value > MaxCoverStepHeight)
                 {
-                    throw new ArgumentException("Wrong cover step " +
-                                                "height = " + value + " mm. " +
-                                                "Range: 6 mm - " + 
-                                                MaxCoverStepHeight + " mm!");
+                    throw new ArgumentException(
+                        $@"Wrong cover step height = {value} mm. " +
+                        $@"Range: 6 mm - {MaxCoverStepHeight} mm!");
                 }
 
                 _coverStepHeight = value;
@@ -369,10 +368,9 @@ namespace Cover
             {
                 if (value < 5 || value > MaxHeightInnerStepCover)
                 {
-                    throw new ArgumentException("Wrong height inner " +
-                                                "step cover = " + value + 
-                                                " mm. Range: 5 mm - " + 
-                                                MaxHeightInnerStepCover + " mm!");
+                    throw new ArgumentException(
+                        $@"Wrong height inner step cover = {value} " +
+                        $@"mm. Range: 5 mm - {MaxHeightInnerStepCover} mm!");
                 }
 
                 _heightInnerStepCover = value;
