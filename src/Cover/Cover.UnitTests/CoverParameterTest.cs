@@ -86,8 +86,8 @@ namespace Cover.UnitTests
             var coverParameter = new CoverParameter();
 
             //Act
-            coverParameter.CoverDiameter = correctValue;
             coverParameter.OuterStepDiameter = extrucValue;
+            coverParameter.CoverDiameter = correctValue;
 
             //Assert
             Assert.AreEqual(coverParameter.OuterStepDiameter - 15,
@@ -140,8 +140,8 @@ namespace Cover.UnitTests
             var coverParameter = new CoverParameter();
 
             //Act
-            coverParameter.CoverDiameter = correctValue;
             coverParameter.DiameterLargeSteppedCoverHole = extrucValue;
+            coverParameter.CoverDiameter = correctValue;
 
             //Assert
             Assert.AreEqual(coverParameter.DiameterLargeSteppedCoverHole - 5,
@@ -461,8 +461,8 @@ namespace Cover.UnitTests
             var coverParameter = new CoverParameter();
 
             //Act
-            coverParameter.OuterStepDiameter = correctValue;
             coverParameter.DiameterLargeSteppedCoverHole = extrucValue;
+            coverParameter.OuterStepDiameter = correctValue;
 
             //Assert
             Assert.AreEqual(coverParameter.DiameterLargeSteppedCoverHole - 5,
