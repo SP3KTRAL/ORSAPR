@@ -7,12 +7,12 @@ using ArgumentException = System.ArgumentException;
 
 namespace CoverUI
 {
-    //TODO: XML
     /// <summary>
     /// Форма для задания параметров модели.
     /// </summary>
     public partial class MainForm : Form
     {
+        //TODO: RSDN
         /// <summary>
         /// Поле параметров.
         /// </summary>
@@ -117,7 +117,6 @@ namespace CoverUI
                     _coverParameter.CoverDiameter = value;
 
                     minMaxSmallHoleDiameterLabel.Text =
-                        //TODO:
                         RenameTextLabel(2, 
                             _coverParameter.MaxSmallHoleDiameter);
 

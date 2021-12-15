@@ -2,7 +2,6 @@
 
 namespace KompasWrapper
 {
-     //TODO: XML
      /// <summary>
      /// Класс для постройки модели.
      /// </summary>

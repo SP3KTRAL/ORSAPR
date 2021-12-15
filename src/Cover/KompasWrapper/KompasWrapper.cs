@@ -5,7 +5,6 @@ using Kompas6Constants3D;
 
 namespace KompasWrapper
 {
-    //TODO: XML
     /// <summary>
     /// Класс для связи с Компасом.
     /// </summary>
