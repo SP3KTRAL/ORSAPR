@@ -8,6 +8,56 @@ namespace Cover
     public class CoverParameter
     {
         /// <summary>
+        /// Минимальное значение диаметра крышки.
+        /// </summary>
+        public const double MIN_COVER_DIAMETER = 50;
+
+        /// <summary>
+        /// Максимальное значение диаметра крышки.
+        /// </summary>
+        public const double MAX_COVER_DIAMETER = 500;
+
+        /// <summary>
+        /// Минимальное значение диаметра малого ступенчатого отверстия.
+        /// </summary>
+        public const double MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER = 15;
+
+        /// <summary>
+        /// Минимальное значение диаметра большого ступенчатого отверстия.
+        /// </summary>
+        public const double MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE = 20;
+
+        /// <summary>
+        /// Минимальное значение диаметра малых отверстий.
+        /// </summary>
+        public const double MIN_SMALL_HOLE_DIAMETER = 2;
+
+        /// <summary>
+        /// Минимальное значение диаметра внешней ступени.
+        /// </summary>
+        public const double MIN_OUTER_STEP_DIAMETER = 35;
+
+        /// <summary>
+        /// Минимальное значение толщины крышки.
+        /// </summary>
+        public const double MIN_COVER_THICKNESS = 6;
+
+        /// <summary>
+        /// Максимальное значение толщины крышки.
+        /// </summary>
+        public const double MAX_COVER_THICKNESS = 60;
+
+        /// <summary>
+        /// Минимальное значение высоты ступени крышки.
+        /// </summary>
+        public const double MIN_COVER_STEP_HEIGHT = 4;
+
+        /// <summary>
+        /// Минимальное значение высоты внутренней ступени крышки.
+        /// </summary>
+        public const double MIN_HEIGHT_INNER_STEP_COVER = 5;
+
+        /// <summary>
         /// Диаметр крышки.
         /// </summary>
         private double _coverDiameter;
@@ -85,15 +135,12 @@ namespace Cover
             get => _coverDiameter;
             set
             {
-                double minCoverDiameter = 50;
-                double maxCoverDiameter = 500;
-
-                if (value < minCoverDiameter || value > maxCoverDiameter)
+                if (value < MIN_COVER_DIAMETER || value > MAX_COVER_DIAMETER)
                 {
                     throw new ArgumentException("Wrong cover diameter = " +
                                                 $"{value} mm.\n" +
-                                                $"Range: {minCoverDiameter} " +
-                                                $"mm - {maxCoverDiameter} mm!");
+                                                $"Range: {MIN_COVER_DIAMETER} " +
+                                                $"mm - {MAX_COVER_DIAMETER} mm!");
                 }
 
                 _coverDiameter = value;
@@ -135,14 +182,12 @@ namespace Cover
             get => _diameterSmallSteppedHoleCover;
             set
             {
-                double minDiameterSmallSteppedHoleCover = 15;
-
-                if (value < minDiameterSmallSteppedHoleCover || 
+                if (value < MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER || 
                     value > MaxDiameterSmallSteppedHoleCover)
                 {
                     throw new ArgumentException(
                         "Wrong diameter small stepped hole cover = " +
-                        $"{value} mm.\nRange: {minDiameterSmallSteppedHoleCover} mm - " +
+                        $"{value} mm.\nRange: {MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER} mm - " +
                         $"{MaxDiameterSmallSteppedHoleCover} mm!");
                 }
 
@@ -175,15 +220,13 @@ namespace Cover
             get => _diameterLargeSteppedCoverHole;
             set
             {
-                double minDiameterLargeSteppedCoverHole = 20;
-
-                if (value < minDiameterLargeSteppedCoverHole || 
+                if (value < MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE || 
                     value > MaxDiameterLargeSteppedCoverHole)
                 {
                     throw new ArgumentException(
                         "Wrong diameter large stepped cover " +
                         $"hole = {value} mm.\nRange: " +
-                        $"{minDiameterLargeSteppedCoverHole} mm - " +
+                        $"{MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE} mm - " +
                         $"{MaxDiameterLargeSteppedCoverHole} mm!");
                 }
 
@@ -218,13 +261,12 @@ namespace Cover
             get => _smallHoleDiameter;
             set
             {
-                double minSmallHoleDiameter = 2;
-                if (value < minSmallHoleDiameter || 
+                if (value < MIN_SMALL_HOLE_DIAMETER || 
                     value > MaxSmallHoleDiameter)
                 {
                     throw new ArgumentException(
                         $"Wrong small hole diameter = {value} " +
-                        $"mm.\nRange: {minSmallHoleDiameter} mm - " +
+                        $"mm.\nRange: {MIN_SMALL_HOLE_DIAMETER} mm - " +
                         $"{MaxSmallHoleDiameter} mm!");
                 }
 
@@ -270,14 +312,12 @@ namespace Cover
             get => _outerStepDiameter;
             set
             {
-                double minOuterStepDiameter = 35;
-
-                if (value < minOuterStepDiameter 
+                if (value < MIN_OUTER_STEP_DIAMETER 
                     || value > MaxOuterStepDiameter)
                 {
                     throw new ArgumentException(
                         $"Wrong outer step diameter = {value} " +
-                        $"mm.\nRange: {minOuterStepDiameter} mm - " +
+                        $"mm.\nRange: {MIN_OUTER_STEP_DIAMETER} mm - " +
                         $"{MaxOuterStepDiameter} mm!");
                 }
 
@@ -326,15 +366,12 @@ namespace Cover
             get => _coverThickness;
             set
             {
-                double minCoverThickness = 6;
-                double maxCoverThickness = 60;
-
-                if (value < minCoverThickness || value > maxCoverThickness)
+                if (value < MIN_COVER_THICKNESS || value > MAX_COVER_THICKNESS)
                 {
                     throw new ArgumentException(
                         $"Wrong cover thickness = {value} " +
-                        $"mm.\nRange: {minCoverThickness} mm - " +
-                        $"{maxCoverThickness} mm!");
+                        $"mm.\nRange: {MIN_COVER_THICKNESS} mm - " +
+                        $"{MAX_COVER_THICKNESS} mm!");
                 }
 
                 _coverThickness = value;
@@ -352,14 +389,12 @@ namespace Cover
             get => _coverStepHeight;
             set
             {
-                double minCoverStepHeight = 4;
-
-                if (value < minCoverStepHeight || 
+                if (value < MIN_COVER_STEP_HEIGHT || 
                     value > MaxCoverStepHeight)
                 {
                     throw new ArgumentException(
                         $"Wrong cover step height = {value} mm." +
-                        $"\nRange: {minCoverStepHeight} mm - " +
+                        $"\nRange: {MIN_COVER_STEP_HEIGHT} mm - " +
                         $"{MaxCoverStepHeight} mm!");
                 }
 
@@ -392,14 +427,12 @@ namespace Cover
             get => _heightInnerStepCover;
             set
             {
-                double minHeightInnerStepCover = 5;
-
-                if (value < minHeightInnerStepCover || 
+                if (value < MIN_HEIGHT_INNER_STEP_COVER || 
                     value > MaxHeightInnerStepCover)
                 {
                     throw new ArgumentException(
                         $"Wrong height inner step cover = {value} " +
-                        $"mm.\nRange: {minHeightInnerStepCover} mm - " +
+                        $"mm.\nRange: {MIN_HEIGHT_INNER_STEP_COVER} mm - " +
                         $"{MaxHeightInnerStepCover} mm!");
                 }
 

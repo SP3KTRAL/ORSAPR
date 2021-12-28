@@ -25,28 +25,31 @@ namespace CoverUI
         {
             InitializeComponent();
             _coverParameter = new CoverParameter();
+
             minMaxSmallHoleDiameterLabel.Text =
-                RenameTextLabel(2,
+                RenameTextLabel(CoverParameter.MIN_SMALL_HOLE_DIAMETER,
                     _coverParameter.MaxSmallHoleDiameter);
 
             minMaxOuterStepDiameterLabel.Text =
-                RenameTextLabel(35,
+                RenameTextLabel(CoverParameter.MIN_OUTER_STEP_DIAMETER,
                     _coverParameter.MaxOuterStepDiameter);
 
             minMaxDiameterLargeSteppedCoverHoleLabel.Text =
-                RenameTextLabel(20,
+                RenameTextLabel(
+                    CoverParameter.MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE,
                     _coverParameter.MaxDiameterLargeSteppedCoverHole);
 
             minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                RenameTextLabel(15,
+                RenameTextLabel(
+                    CoverParameter.MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER,
                     _coverParameter.MaxDiameterSmallSteppedHoleCover);
 
             minMaxCoverStepHeightLabel.Text =
-                RenameTextLabel(4,
+                RenameTextLabel(CoverParameter.MIN_COVER_STEP_HEIGHT,
                     _coverParameter.MaxCoverStepHeight);
 
             minMaxHeightInnerStepCoverLabel.Text =
-                RenameTextLabel(5,
+                RenameTextLabel(CoverParameter.MIN_HEIGHT_INNER_STEP_COVER,
                     _coverParameter.MaxHeightInnerStepCover);
         }
 
@@ -140,19 +143,21 @@ namespace CoverUI
                     _coverParameter.CoverDiameter = value;
 
                     minMaxSmallHoleDiameterLabel.Text =
-                        RenameTextLabel(2, 
+                        RenameTextLabel(CoverParameter.MIN_SMALL_HOLE_DIAMETER, 
                             _coverParameter.MaxSmallHoleDiameter);
 
                     minMaxOuterStepDiameterLabel.Text =
-                        RenameTextLabel(35, 
+                        RenameTextLabel(CoverParameter.MIN_OUTER_STEP_DIAMETER, 
                             _coverParameter.MaxOuterStepDiameter);
 
                     minMaxDiameterLargeSteppedCoverHoleLabel.Text =
-                        RenameTextLabel(20, 
+                        RenameTextLabel(
+                            CoverParameter.MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE, 
                             _coverParameter.MaxDiameterLargeSteppedCoverHole);
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                        RenameTextLabel(15, 
+                        RenameTextLabel(
+                            CoverParameter.MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER, 
                             _coverParameter.MaxDiameterSmallSteppedHoleCover);
                     break;
 
@@ -164,7 +169,8 @@ namespace CoverUI
                     _coverParameter.DiameterLargeSteppedCoverHole = value;
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                        RenameTextLabel(15, 
+                        RenameTextLabel(
+                            CoverParameter.MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER, 
                             _coverParameter.MaxDiameterSmallSteppedHoleCover);
                     break;
 
@@ -176,11 +182,13 @@ namespace CoverUI
                     _coverParameter.OuterStepDiameter = value;
 
                     minMaxDiameterLargeSteppedCoverHoleLabel.Text =
-                        RenameTextLabel(20, 
+                        RenameTextLabel(
+                            CoverParameter.MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE, 
                             _coverParameter.MaxDiameterLargeSteppedCoverHole);
 
                     minMaxDiameterSmallSteppedHoleCoverLabel.Text =
-                        RenameTextLabel(15, 
+                        RenameTextLabel(
+                            CoverParameter.MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER, 
                             _coverParameter.MaxDiameterSmallSteppedHoleCover);
                     break;
 
@@ -188,11 +196,12 @@ namespace CoverUI
                     _coverParameter.CoverThickness = value;
 
                     minMaxCoverStepHeightLabel.Text =
-                        RenameTextLabel(4, 
+                        RenameTextLabel(CoverParameter.MIN_COVER_STEP_HEIGHT, 
                             _coverParameter.MaxCoverStepHeight);
 
                     minMaxHeightInnerStepCoverLabel.Text = 
-                        RenameTextLabel(5, 
+                        RenameTextLabel(
+                            CoverParameter.MIN_HEIGHT_INNER_STEP_COVER, 
                             _coverParameter.MaxHeightInnerStepCover);
                     break;
 
@@ -213,7 +222,7 @@ namespace CoverUI
         /// <param name="min">Минимальное значение.</param>
         /// <param name="max">Максимальное значение.</param>
         /// <returns>Строка, с новыми значениями минимального и максимального.</returns>
-        private string RenameTextLabel(int min, double max)
+        private string RenameTextLabel(double min, double max)
         {
             return $@"({min} mm – {max} mm)";
         }
