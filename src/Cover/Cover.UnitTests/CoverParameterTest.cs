@@ -27,18 +27,25 @@ namespace Cover.UnitTests
             {
                 Assert.AreEqual(valueCoverDiameter,
                     coverParameter.CoverDiameter);
+
                 Assert.AreEqual(valueOuterStepDiameter,
                     coverParameter.OuterStepDiameter);
+
                 Assert.AreEqual(valueDiameterLargeSteppedCoverHole,
                     coverParameter.DiameterLargeSteppedCoverHole);
+
                 Assert.AreEqual(valueDiameterSmallSteppedHoleCover,
                     coverParameter.DiameterSmallSteppedHoleCover);
+
                 Assert.AreEqual(valueSmallHoleDiameter,
                     coverParameter.SmallHoleDiameter);
+
                 Assert.AreEqual(valueCoverThickness,
                     coverParameter.CoverThickness);
+
                 Assert.AreEqual(valueCoverStepHeight,
                     coverParameter.CoverStepHeight);
+
                 Assert.AreEqual(valueHeightInnerStepCover,
                     coverParameter.HeightInnerStepCover);
             });
@@ -143,8 +150,6 @@ namespace Cover.UnitTests
             Assert.AreEqual(coverParameter.DiameterLargeSteppedCoverHole - 5,
                 coverParameter.MaxDiameterSmallSteppedHoleCover);
         }
-
-
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
                              "DiameterSmallSteppedHoleCover на внесение " +
