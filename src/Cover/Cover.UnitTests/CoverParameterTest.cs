@@ -6,6 +6,44 @@ namespace Cover.UnitTests
     [TestFixture]
     public class CoverParameterTest
     {
+        [TestCase(TestName = "Проверка конструкотора CoverParameter")]
+        public void TestCoverParameter_CorrectValue_ResultCorrectSet()
+        {
+            //Setup
+            var valueCoverDiameter = 270;
+            var valueOuterStepDiameter = 185;
+            var valueDiameterLargeSteppedCoverHole = 115;
+            var valueDiameterSmallSteppedHoleCover = 92;
+            var valueSmallHoleDiameter = 20;
+            var valueCoverThickness = 37;
+            var valueCoverStepHeight = 23;
+            var valueHeightInnerStepCover = 22;
+
+            //Act
+            var coverParameter = new CoverParameter();
+
+            //Assert
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(valueCoverDiameter,
+                    coverParameter.CoverDiameter);
+                Assert.AreEqual(valueOuterStepDiameter,
+                    coverParameter.OuterStepDiameter);
+                Assert.AreEqual(valueDiameterLargeSteppedCoverHole,
+                    coverParameter.DiameterLargeSteppedCoverHole);
+                Assert.AreEqual(valueDiameterSmallSteppedHoleCover,
+                    coverParameter.DiameterSmallSteppedHoleCover);
+                Assert.AreEqual(valueSmallHoleDiameter,
+                    coverParameter.SmallHoleDiameter);
+                Assert.AreEqual(valueCoverThickness,
+                    coverParameter.CoverThickness);
+                Assert.AreEqual(valueCoverStepHeight,
+                    coverParameter.CoverStepHeight);
+                Assert.AreEqual(valueHeightInnerStepCover,
+                    coverParameter.HeightInnerStepCover);
+            });
+        }
+
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
                              "CoverDiameter на внесение корректных " +
                              "значений")]
@@ -43,10 +81,10 @@ namespace Cover.UnitTests
 
         [TestCase(TestName = "Проверка if OuterStepDiameter у свойства " +
                              "CoverDiameter на внесение корректных значений")]
-        public void TestCoverDiameter_OuterStepDiameter0_ResultCorrectSet()
+        public void TestCoverDiameter_OuterStepDiameterMoreMax_ResultCorrectSet()
         {
             //Setup
-            var correctValue = 300.0;
+            var correctValue = 100.0;
             var coverParameter = new CoverParameter();
 
             //Act
@@ -58,34 +96,14 @@ namespace Cover.UnitTests
         }
 
         [TestCase(TestName = "Проверка if OuterStepDiameter у свойства " +
-                             "CoverDiameter на внесение корректных значений")]
-        public void TestCoverDiameter_OuterStepDiameterMoreMax_ResultCorrectSet()
-        {
-            //Setup
-            var correctValue = 300.0;
-            var extrucValue = 350.0;
-            var coverParameter = new CoverParameter();
-
-            //Act
-            coverParameter.OuterStepDiameter = extrucValue;
-            coverParameter.CoverDiameter = correctValue;
-
-            //Assert
-            Assert.AreEqual(coverParameter.MaxOuterStepDiameter - 15,
-                coverParameter.MaxDiameterLargeSteppedCoverHole);
-        }
-
-        [TestCase(TestName = "Проверка if OuterStepDiameter у свойства " +
                              "CoverDiameter на внесение некорректных значений")]
         public void TestCoverDiameter_OuterStepDiameterMore0LessMax_ResultCorrectSet()
         {
             //Setup
-            var correctValue = 500.0;
-            var extrucValue = 250.0;
+            var correctValue = 300.0;
             var coverParameter = new CoverParameter();
 
             //Act
-            coverParameter.OuterStepDiameter = extrucValue;
             coverParameter.CoverDiameter = correctValue;
 
             //Assert
@@ -95,33 +113,14 @@ namespace Cover.UnitTests
 
         [TestCase(TestName = "Проверка if DiameterLargeSteppedCoverHole" +
                              " у свойства CoverDiameter на внесение " +
-                             "некорректных значений")]
-        public void TestCoverDiameter_DiameterLargeSteppedCoverHole0_ResultCorrectSet()
-        {
-            //Setup
-            var correctValue = 300.0;
-            var coverParameter = new CoverParameter();
-
-            //Act
-            coverParameter.CoverDiameter = correctValue;
-
-            //Assert
-            Assert.AreEqual(coverParameter.MaxDiameterLargeSteppedCoverHole - 5,
-                coverParameter.MaxDiameterSmallSteppedHoleCover);
-        }
-
-        [TestCase(TestName = "Проверка if DiameterLargeSteppedCoverHole " +
-                             "у свойства CoverDiameter на внесение " +
                              "корректных значений")]
         public void TestCoverDiameter_DiameterLargeSteppedCoverHoleMoreMax_ResultCorrectSet()
         {
             //Setup
-            var correctValue = 300.0;
-            var extrucValue = 335.0;
+            var correctValue = 100.0;
             var coverParameter = new CoverParameter();
 
             //Act
-            coverParameter.DiameterLargeSteppedCoverHole = extrucValue;
             coverParameter.CoverDiameter = correctValue;
 
             //Assert
@@ -135,11 +134,9 @@ namespace Cover.UnitTests
         {
             //Setup
             var correctValue = 500.0;
-            var extrucValue = 250.0;
             var coverParameter = new CoverParameter();
 
             //Act
-            coverParameter.DiameterLargeSteppedCoverHole = extrucValue;
             coverParameter.CoverDiameter = correctValue;
 
             //Assert
@@ -155,7 +152,7 @@ namespace Cover.UnitTests
         public void TestSetDiameterSmallSteppedHoleCover_CorrectValue_ResultCorrectSet()
         {
             //Setup
-            var correctValue = 200.0;
+            var correctValue = 92.0;
             var coverParameter = new CoverParameter();
 
             //Act
@@ -227,7 +224,7 @@ namespace Cover.UnitTests
         public void TestSetDiameterLargeSteppedCoverHole_CorrectValue_ResultCorrectSet()
         {
             //Setup
-            var correctValue = 200.0;
+            var correctValue = 115.0;
             var coverParameter = new CoverParameter();
 
             //Act
@@ -418,31 +415,13 @@ namespace Cover.UnitTests
         [TestCase(TestName = "Проверка if DiameterLargeSteppedCoverHole у " +
                              "свойства OuterStepDiameter на внесение " +
                              "корректных значений")]
-        public void TestOuterStepDiameter_DiameterLargeSteppedCoverHole0_ResultCorrectSet()
-        {
-            //Setup
-            var correctValue = 350.0;
-            var coverParameter = new CoverParameter();
-
-            //Act
-            coverParameter.OuterStepDiameter = correctValue;
-
-            //Assert
-            Assert.AreEqual(coverParameter.MaxDiameterLargeSteppedCoverHole - 5,
-                coverParameter.MaxDiameterSmallSteppedHoleCover);
-        }
-
-        [TestCase(TestName = "Проверка if DiameterLargeSteppedCoverHole у свойства " +
-                             "OuterStepDiameter на внесение корректных значений")]
         public void TestOuterStepDiameter_DiameterLargeSteppedCoverHoleMoreMax_ResultCorrectSet()
         {
             //Setup
-            var correctValue = 300.0;
-            var extrucValue = 335.0;
+            var correctValue = 100.0;
             var coverParameter = new CoverParameter();
 
             //Act
-            coverParameter.DiameterLargeSteppedCoverHole = extrucValue;
             coverParameter.OuterStepDiameter = correctValue;
 
             //Assert
@@ -455,12 +434,10 @@ namespace Cover.UnitTests
         public void TestOuterStepDiameter_DiameterLargeSteppedCoverHoleMore0LessMax_ResultCorrectSet()
         {
             //Setup
-            var correctValue = 350.0;
-            var extrucValue = 200.0;
+            var correctValue = 185.0;
             var coverParameter = new CoverParameter();
 
             //Act
-            coverParameter.DiameterLargeSteppedCoverHole = extrucValue;
             coverParameter.OuterStepDiameter = correctValue;
 
             //Assert
@@ -540,7 +517,7 @@ namespace Cover.UnitTests
         public void TestSetCoverStepHeight_CorrectValue_ResultCorrectSet()
         {
             //Setup
-            var correctValue = 30.0;
+            var correctValue = 23.0;
             var coverParameter = new CoverParameter();
 
             //Act
