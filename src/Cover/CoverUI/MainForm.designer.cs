@@ -90,9 +90,9 @@ namespace CoverUI
             this.smallHoleDiameterLabel.AutoSize = true;
             this.smallHoleDiameterLabel.Location = new System.Drawing.Point(12, 90);
             this.smallHoleDiameterLabel.Name = "smallHoleDiameterLabel";
-            this.smallHoleDiameterLabel.Size = new System.Drawing.Size(164, 13);
+            this.smallHoleDiameterLabel.Size = new System.Drawing.Size(105, 13);
             this.smallHoleDiameterLabel.TabIndex = 3;
-            this.smallHoleDiameterLabel.Text = "PositionSmallHole Hole Diameter:";
+            this.smallHoleDiameterLabel.Text = "Small Hole Diameter:";
             // 
             // outerStepDiameterLabel
             // 
@@ -136,6 +136,7 @@ namespace CoverUI
             this.heightInnerStepCoverTextBox.Name = "heightInnerStepCoverTextBox";
             this.heightInnerStepCoverTextBox.Size = new System.Drawing.Size(60, 20);
             this.heightInnerStepCoverTextBox.TabIndex = 15;
+            this.heightInnerStepCoverTextBox.Text = "22";
             this.heightInnerStepCoverTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.heightInnerStepCoverTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
@@ -145,6 +146,7 @@ namespace CoverUI
             this.coverStepHeightTextBox.Name = "coverStepHeightTextBox";
             this.coverStepHeightTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverStepHeightTextBox.TabIndex = 14;
+            this.coverStepHeightTextBox.Text = "23";
             this.coverStepHeightTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.coverStepHeightTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
@@ -154,6 +156,7 @@ namespace CoverUI
             this.coverThicknessTextBox.Name = "coverThicknessTextBox";
             this.coverThicknessTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverThicknessTextBox.TabIndex = 13;
+            this.coverThicknessTextBox.Text = "37";
             this.coverThicknessTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.coverThicknessTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
@@ -163,6 +166,7 @@ namespace CoverUI
             this.outerStepDiameterTextBox.Name = "outerStepDiameterTextBox";
             this.outerStepDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.outerStepDiameterTextBox.TabIndex = 12;
+            this.outerStepDiameterTextBox.Text = "185";
             this.outerStepDiameterTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.outerStepDiameterTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
@@ -172,6 +176,7 @@ namespace CoverUI
             this.smallHoleDiameterTextBox.Name = "smallHoleDiameterTextBox";
             this.smallHoleDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.smallHoleDiameterTextBox.TabIndex = 11;
+            this.smallHoleDiameterTextBox.Text = "20";
             this.smallHoleDiameterTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.smallHoleDiameterTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
@@ -181,6 +186,7 @@ namespace CoverUI
             this.diameterLargeSteppedCoverHoleTextBox.Name = "diameterLargeSteppedCoverHoleTextBox";
             this.diameterLargeSteppedCoverHoleTextBox.Size = new System.Drawing.Size(60, 20);
             this.diameterLargeSteppedCoverHoleTextBox.TabIndex = 10;
+            this.diameterLargeSteppedCoverHoleTextBox.Text = "115";
             this.diameterLargeSteppedCoverHoleTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.diameterLargeSteppedCoverHoleTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
@@ -190,6 +196,7 @@ namespace CoverUI
             this.diameterSmallSteppedHoleCoverTextBox.Name = "diameterSmallSteppedHoleCoverTextBox";
             this.diameterSmallSteppedHoleCoverTextBox.Size = new System.Drawing.Size(60, 20);
             this.diameterSmallSteppedHoleCoverTextBox.TabIndex = 9;
+            this.diameterSmallSteppedHoleCoverTextBox.Text = "92";
             this.diameterSmallSteppedHoleCoverTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.diameterSmallSteppedHoleCoverTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
@@ -200,6 +207,7 @@ namespace CoverUI
             this.coverDiameterTextBox.Name = "coverDiameterTextBox";
             this.coverDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.coverDiameterTextBox.TabIndex = 8;
+            this.coverDiameterTextBox.Text = "270";
             this.coverDiameterTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.coverDiameterTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
@@ -326,6 +334,8 @@ namespace CoverUI
             this.Controls.Add(this.diameterLargeSteppedCoverHoleLabel);
             this.Controls.Add(this.diameterSmallSteppedHoleCoverLabel);
             this.Controls.Add(this.coverDiameterLabel);
+            this.MaximumSize = new System.Drawing.Size(638, 324);
+            this.MinimumSize = new System.Drawing.Size(638, 324);
             this.Name = "MainForm";
             this.Text = "Cover Builder";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

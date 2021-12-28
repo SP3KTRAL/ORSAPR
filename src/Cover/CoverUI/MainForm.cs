@@ -16,7 +16,7 @@ namespace CoverUI
         /// <summary>
         /// Поле параметров.
         /// </summary>
-        readonly CoverParameter _coverParameter;
+        private readonly CoverParameter _coverParameter;
 
         /// <summary>
         /// Конструктор.
@@ -25,6 +25,29 @@ namespace CoverUI
         {
             InitializeComponent();
             _coverParameter = new CoverParameter();
+            minMaxSmallHoleDiameterLabel.Text =
+                RenameTextLabel(2,
+                    _coverParameter.MaxSmallHoleDiameter);
+
+            minMaxOuterStepDiameterLabel.Text =
+                RenameTextLabel(35,
+                    _coverParameter.MaxOuterStepDiameter);
+
+            minMaxDiameterLargeSteppedCoverHoleLabel.Text =
+                RenameTextLabel(20,
+                    _coverParameter.MaxDiameterLargeSteppedCoverHole);
+
+            minMaxDiameterSmallSteppedHoleCoverLabel.Text =
+                RenameTextLabel(15,
+                    _coverParameter.MaxDiameterSmallSteppedHoleCover);
+
+            minMaxCoverStepHeightLabel.Text =
+                RenameTextLabel(4,
+                    _coverParameter.MaxCoverStepHeight);
+
+            minMaxHeightInnerStepCoverLabel.Text =
+                RenameTextLabel(5,
+                    _coverParameter.MaxHeightInnerStepCover);
         }
 
         /// <summary>
@@ -192,7 +215,7 @@ namespace CoverUI
         /// <returns>Строка, с новыми значениями минимального и максимального.</returns>
         private string RenameTextLabel(int min, double max)
         {
-            return $@"({min} mm - {max} mm)";
+            return $@"({min} mm – {max} mm)";
         }
 
         /// <summary>
