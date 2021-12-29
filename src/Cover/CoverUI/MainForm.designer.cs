@@ -334,8 +334,8 @@ namespace CoverUI
             this.Controls.Add(this.diameterLargeSteppedCoverHoleLabel);
             this.Controls.Add(this.diameterSmallSteppedHoleCoverLabel);
             this.Controls.Add(this.coverDiameterLabel);
-            this.MaximumSize = new System.Drawing.Size(638, 324);
-            this.MinimumSize = new System.Drawing.Size(638, 324);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Cover Builder";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

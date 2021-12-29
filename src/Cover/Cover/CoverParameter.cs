@@ -137,10 +137,10 @@ namespace Cover
             {
                 if (value < MIN_COVER_DIAMETER || value > MAX_COVER_DIAMETER)
                 {
-                    throw new ArgumentException("Wrong cover diameter = " +
-                                                $"{value} mm.\n" +
-                                                $"Range: {MIN_COVER_DIAMETER} " +
-                                                $"mm - {MAX_COVER_DIAMETER} mm!");
+                    string parameterName = "Cover Diameter";
+
+                    ExceptionCallText(parameterName, value, 
+                        MIN_COVER_DIAMETER, MAX_COVER_DIAMETER);
                 }
 
                 _coverDiameter = value;
@@ -185,10 +185,11 @@ namespace Cover
                 if (value < MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER || 
                     value > MaxDiameterSmallSteppedHoleCover)
                 {
-                    throw new ArgumentException(
-                        "Wrong diameter small stepped hole cover = " +
-                        $"{value} mm.\nRange: {MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER} mm - " +
-                        $"{MaxDiameterSmallSteppedHoleCover} mm!");
+                    string parameterName = "Diameter Small Stepped Hole Cover";
+
+                    ExceptionCallText(parameterName, value,
+                        MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER,
+                        MaxDiameterSmallSteppedHoleCover);
                 }
 
                 _diameterSmallSteppedHoleCover = value;
@@ -223,11 +224,11 @@ namespace Cover
                 if (value < MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE || 
                     value > MaxDiameterLargeSteppedCoverHole)
                 {
-                    throw new ArgumentException(
-                        "Wrong diameter large stepped cover " +
-                        $"hole = {value} mm.\nRange: " +
-                        $"{MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE} mm - " +
-                        $"{MaxDiameterLargeSteppedCoverHole} mm!");
+                    string parameterName = "Diameter Large Stepped Cover Hole";
+
+                    ExceptionCallText(parameterName, value, 
+                        MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE, 
+                        MaxDiameterLargeSteppedCoverHole);
                 }
 
                 _diameterLargeSteppedCoverHole = value;
@@ -264,10 +265,10 @@ namespace Cover
                 if (value < MIN_SMALL_HOLE_DIAMETER || 
                     value > MaxSmallHoleDiameter)
                 {
-                    throw new ArgumentException(
-                        $"Wrong small hole diameter = {value} " +
-                        $"mm.\nRange: {MIN_SMALL_HOLE_DIAMETER} mm - " +
-                        $"{MaxSmallHoleDiameter} mm!");
+                    string parameterName = "Small Hole Diameter";
+
+                    ExceptionCallText(parameterName, value,
+                        MIN_SMALL_HOLE_DIAMETER, MaxSmallHoleDiameter);
                 }
 
                 _smallHoleDiameter = value;
@@ -315,10 +316,10 @@ namespace Cover
                 if (value < MIN_OUTER_STEP_DIAMETER 
                     || value > MaxOuterStepDiameter)
                 {
-                    throw new ArgumentException(
-                        $"Wrong outer step diameter = {value} " +
-                        $"mm.\nRange: {MIN_OUTER_STEP_DIAMETER} mm - " +
-                        $"{MaxOuterStepDiameter} mm!");
+                    string parameterName = "Outer Step Diameter";
+
+                    ExceptionCallText(parameterName, value,
+                        MIN_OUTER_STEP_DIAMETER, MaxOuterStepDiameter);
                 }
 
                 _outerStepDiameter = value;
@@ -368,10 +369,10 @@ namespace Cover
             {
                 if (value < MIN_COVER_THICKNESS || value > MAX_COVER_THICKNESS)
                 {
-                    throw new ArgumentException(
-                        $"Wrong cover thickness = {value} " +
-                        $"mm.\nRange: {MIN_COVER_THICKNESS} mm - " +
-                        $"{MAX_COVER_THICKNESS} mm!");
+                    string parameterName = "Cover Thickness";
+
+                    ExceptionCallText(parameterName, value, 
+                        MIN_COVER_THICKNESS, MAX_COVER_THICKNESS);
                 }
 
                 _coverThickness = value;
@@ -392,10 +393,10 @@ namespace Cover
                 if (value < MIN_COVER_STEP_HEIGHT || 
                     value > MaxCoverStepHeight)
                 {
-                    throw new ArgumentException(
-                        $"Wrong cover step height = {value} mm." +
-                        $"\nRange: {MIN_COVER_STEP_HEIGHT} mm - " +
-                        $"{MaxCoverStepHeight} mm!");
+                    string parameterName = "Cover Step Height";
+
+                    ExceptionCallText(parameterName, value, 
+                        MIN_COVER_STEP_HEIGHT, MaxCoverStepHeight);
                 }
 
                 _coverStepHeight = value;
@@ -430,10 +431,10 @@ namespace Cover
                 if (value < MIN_HEIGHT_INNER_STEP_COVER || 
                     value > MaxHeightInnerStepCover)
                 {
-                    throw new ArgumentException(
-                        $"Wrong height inner step cover = {value} " +
-                        $"mm.\nRange: {MIN_HEIGHT_INNER_STEP_COVER} mm - " +
-                        $"{MaxHeightInnerStepCover} mm!");
+                    string parameterName = "Height Inner Step Cover";
+
+                    ExceptionCallText(parameterName, value, 
+                        MIN_HEIGHT_INNER_STEP_COVER, MaxHeightInnerStepCover);
                 }
 
                 _heightInnerStepCover = value;
@@ -470,6 +471,21 @@ namespace Cover
             CoverThickness = 37;
             CoverStepHeight = 23;
             HeightInnerStepCover = 22;
+        }
+
+        /// <summary>
+        /// Присваевает текст сообщению ошибки.
+        /// </summary>
+        /// <param name="parameterName">Название параметра.</param>
+        /// <param name="value">Значение параметра.</param>
+        /// <param name="minValue">Минимальное значение параметра.</param>
+        /// <param name="maxValue">Максимальное значение параметра.</param>
+        private void ExceptionCallText(string parameterName, 
+            double value, double minValue, double maxValue)
+        {
+            throw new ArgumentException(
+                $"Wrong {parameterName} = {value} mm.\n" +
+                $"Range: {minValue} mm - {maxValue} mm!");
         }
     }
 }
