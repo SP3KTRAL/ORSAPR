@@ -29,6 +29,7 @@ namespace CoverUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.coverDiameterLabel = new System.Windows.Forms.Label();
             this.diameterSmallSteppedHoleCoverLabel = new System.Windows.Forms.Label();
             this.diameterLargeSteppedCoverHoleLabel = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@ namespace CoverUI
             this.diameterLargeSteppedCoverHoleTextBox = new System.Windows.Forms.TextBox();
             this.diameterSmallSteppedHoleCoverTextBox = new System.Windows.Forms.TextBox();
             this.coverDiameterTextBox = new System.Windows.Forms.TextBox();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buildButton = new System.Windows.Forms.Button();
             this.minMaxCoverDiameterLabel = new System.Windows.Forms.Label();
             this.minMaxDiameterSmallSteppedHoleCoverLabel = new System.Windows.Forms.Label();
@@ -55,6 +55,10 @@ namespace CoverUI
             this.minMaxCoverThicknessLabel = new System.Windows.Forms.Label();
             this.minMaxCoverStepHeightLabel = new System.Windows.Forms.Label();
             this.minMaxHeightInnerStepCoverLabel = new System.Windows.Forms.Label();
+            this.labelSmallHoleCircleDiameter = new System.Windows.Forms.Label();
+            this.smallHoleCircleDiameterTextBox = new System.Windows.Forms.TextBox();
+            this.labelMinMaxSmallHoleCircleDiameter = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,16 +215,6 @@ namespace CoverUI
             this.coverDiameterTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.coverDiameterTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Image = global::CoverUI.Properties.Resources.coverDiameterTextBox;
-            this.pictureBox.Location = new System.Drawing.Point(375, 12);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(231, 198);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 16;
-            this.pictureBox.TabStop = false;
-            // 
             // buildButton
             // 
             this.buildButton.Location = new System.Drawing.Point(535, 250);
@@ -303,11 +297,52 @@ namespace CoverUI
             this.minMaxHeightInnerStepCoverLabel.TabIndex = 25;
             this.minMaxHeightInnerStepCoverLabel.Text = "(5 mm – 50 mm)";
             // 
+            // labelSmallHoleCircleDiameter
+            // 
+            this.labelSmallHoleCircleDiameter.AutoSize = true;
+            this.labelSmallHoleCircleDiameter.Location = new System.Drawing.Point(12, 219);
+            this.labelSmallHoleCircleDiameter.Name = "labelSmallHoleCircleDiameter";
+            this.labelSmallHoleCircleDiameter.Size = new System.Drawing.Size(134, 13);
+            this.labelSmallHoleCircleDiameter.TabIndex = 26;
+            this.labelSmallHoleCircleDiameter.Text = "Small Hole Circle Diameter:";
+            // 
+            // smallHoleCircleDiameterTextBox
+            // 
+            this.smallHoleCircleDiameterTextBox.Location = new System.Drawing.Point(199, 216);
+            this.smallHoleCircleDiameterTextBox.Name = "smallHoleCircleDiameterTextBox";
+            this.smallHoleCircleDiameterTextBox.Size = new System.Drawing.Size(60, 20);
+            this.smallHoleCircleDiameterTextBox.TabIndex = 27;
+            this.smallHoleCircleDiameterTextBox.Text = "227.5";
+            this.smallHoleCircleDiameterTextBox.Enter += new System.EventHandler(this.TextBoxEnter);
+            this.smallHoleCircleDiameterTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
+            // 
+            // labelMinMaxSmallHoleCircleDiameter
+            // 
+            this.labelMinMaxSmallHoleCircleDiameter.AutoSize = true;
+            this.labelMinMaxSmallHoleCircleDiameter.Location = new System.Drawing.Point(265, 219);
+            this.labelMinMaxSmallHoleCircleDiameter.Name = "labelMinMaxSmallHoleCircleDiameter";
+            this.labelMinMaxSmallHoleCircleDiameter.Size = new System.Drawing.Size(90, 13);
+            this.labelMinMaxSmallHoleCircleDiameter.TabIndex = 28;
+            this.labelMinMaxSmallHoleCircleDiameter.Text = "(41 mm - 494 mm)";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(375, 12);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(231, 198);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 16;
+            this.pictureBox.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 285);
+            this.Controls.Add(this.labelMinMaxSmallHoleCircleDiameter);
+            this.Controls.Add(this.smallHoleCircleDiameterTextBox);
+            this.Controls.Add(this.labelSmallHoleCircleDiameter);
             this.Controls.Add(this.minMaxHeightInnerStepCoverLabel);
             this.Controls.Add(this.minMaxCoverStepHeightLabel);
             this.Controls.Add(this.minMaxCoverThicknessLabel);
@@ -372,5 +407,8 @@ namespace CoverUI
         private System.Windows.Forms.Label minMaxCoverThicknessLabel;
         private System.Windows.Forms.Label minMaxCoverStepHeightLabel;
         private System.Windows.Forms.Label minMaxHeightInnerStepCoverLabel;
+        private System.Windows.Forms.Label labelSmallHoleCircleDiameter;
+        private System.Windows.Forms.TextBox smallHoleCircleDiameterTextBox;
+        private System.Windows.Forms.Label labelMinMaxSmallHoleCircleDiameter;
     }
 }

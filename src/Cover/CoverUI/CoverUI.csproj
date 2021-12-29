@@ -125,5 +125,11 @@
       <Name>KompasWrapper</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallHoleCircleDiameterTextBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallHoleCircleDiameterTextBox.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

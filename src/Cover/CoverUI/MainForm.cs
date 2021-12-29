@@ -50,6 +50,10 @@ namespace CoverUI
             minMaxHeightInnerStepCoverLabel.Text =
                 RenameTextLabel(CoverParameter.MIN_HEIGHT_INNER_STEP_COVER,
                     _coverParameter.MaxHeightInnerStepCover);
+
+            labelMinMaxSmallHoleCircleDiameter.Text =
+                RenameTextLabel(_coverParameter.MinSmallHoleCircleDiameter,
+                    _coverParameter.MaxSmallHoleCircleDiameter);
         }
 
         /// <summary>
@@ -158,6 +162,10 @@ namespace CoverUI
                         RenameTextLabel(
                             CoverParameter.MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER, 
                             _coverParameter.MaxDiameterSmallSteppedHoleCover);
+
+                    labelMinMaxSmallHoleCircleDiameter.Text =
+                        RenameTextLabel(_coverParameter.MinSmallHoleCircleDiameter,
+                            _coverParameter.MaxSmallHoleCircleDiameter);
                     break;
 
                 case nameof(diameterSmallSteppedHoleCoverTextBox):
@@ -175,6 +183,10 @@ namespace CoverUI
 
                 case nameof(smallHoleDiameterTextBox):
                     _coverParameter.SmallHoleDiameter = value;
+
+                    labelMinMaxSmallHoleCircleDiameter.Text =
+                        RenameTextLabel(_coverParameter.MinSmallHoleCircleDiameter,
+                            _coverParameter.MaxSmallHoleCircleDiameter);
                     break;
 
                 case nameof(outerStepDiameterTextBox):
@@ -189,6 +201,10 @@ namespace CoverUI
                         RenameTextLabel(
                             CoverParameter.MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER, 
                             _coverParameter.MaxDiameterSmallSteppedHoleCover);
+
+                    labelMinMaxSmallHoleCircleDiameter.Text =
+                        RenameTextLabel(_coverParameter.MinSmallHoleCircleDiameter,
+                            _coverParameter.MaxSmallHoleCircleDiameter);
                     break;
 
                 case nameof(coverThicknessTextBox):
@@ -210,6 +226,10 @@ namespace CoverUI
 
                 case nameof(coverStepHeightTextBox):
                     _coverParameter.CoverStepHeight = value;
+                    break;
+
+                case nameof(smallHoleCircleDiameterTextBox):
+                    _coverParameter.SmallHoleCircleDiameter = value;
                     break;
                 default: break;
             }

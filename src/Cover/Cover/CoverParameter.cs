@@ -128,6 +128,21 @@ namespace Cover
         private double _maxHeightInnerStepCover;
 
         /// <summary>
+        /// Диаметр круга малых ступенчатых отверстий.
+        /// </summary>
+        private double _smallHoleCircleDiameter;
+
+        /// <summary>
+        /// Минимальный диаметр круга малых ступенчатых отверстий.
+        /// </summary>
+        private double _minSmallHoleCircleDiameter;
+
+        /// <summary>
+        /// Максимальный диаметр круга малых ступенчатых отверстий.
+        /// </summary>
+        private double _maxSmallHoleCircleDiameter;
+
+        /// <summary>
         /// Возвращает и задаёт диаметр крышки.
         /// </summary>
         public double CoverDiameter
@@ -144,8 +159,9 @@ namespace Cover
                 }
 
                 _coverDiameter = value;
-
-                SmallHoleCircleDiameter = (value + OuterStepDiameter) / 2;
+                
+                MaxSmallHoleCircleDiameter = value - 10 - SmallHoleDiameter;
+                MinSmallHoleCircleDiameter = OuterStepDiameter + 10 + SmallHoleDiameter;
 
                 MaxSmallHoleDiameter = Math.Round(value / 12.5, 1);
                 MaxOuterStepDiameter = Math.Round(value / (500.0 / 350.0), 1);
@@ -272,6 +288,9 @@ namespace Cover
                 }
 
                 _smallHoleDiameter = value;
+
+                MaxSmallHoleCircleDiameter = CoverDiameter - 10 - value;
+                MinSmallHoleCircleDiameter = OuterStepDiameter + 10 + value;
             }
         }
 
@@ -291,11 +310,6 @@ namespace Cover
                 _maxSmallHoleDiameter = value;
             }
         }
-
-        /// <summary>
-        /// Возвращает и задаёт диаметр окружности, на которой лежат малые отверстия.
-        /// </summary>
-        public double SmallHoleCircleDiameter { get; set; }
         
         /// <summary>
         /// Создаёт сообщение об ошибке, если значение меньше нуля.
@@ -323,8 +337,8 @@ namespace Cover
                 }
 
                 _outerStepDiameter = value;
-
-                SmallHoleCircleDiameter = (CoverDiameter + value) / 2;
+                
+                MinSmallHoleCircleDiameter = value + 10 + SmallHoleDiameter;
 
                 MaxDiameterLargeSteppedCoverHole = value - 15;
 
@@ -459,18 +473,58 @@ namespace Cover
         }
 
         /// <summary>
+        /// Возвращает и задаёт диаметр круга малых ступенчатых отверстий.
+        /// </summary>
+        public double SmallHoleCircleDiameter
+        {
+            get => _smallHoleCircleDiameter;
+            set
+            {
+                if (value < MinSmallHoleCircleDiameter ||
+                    value > MaxSmallHoleCircleDiameter)
+                {
+                    string parameterName = "Small Hole Circle Diameter";
+
+                    ExceptionCallText(parameterName, value,
+                        MinSmallHoleCircleDiameter, MaxSmallHoleCircleDiameter);
+                }
+
+                _smallHoleCircleDiameter = value;
+            }
+        }
+
+        /// <summary>
+        /// Возвращает и задаёт минимальный диаметр круга малых ступенчатых отверстий.
+        /// </summary>
+        public double MinSmallHoleCircleDiameter
+        {
+            get => _minSmallHoleCircleDiameter;
+            set => _minSmallHoleCircleDiameter = value;
+        }
+
+        /// <summary>
+        /// Возвращает и задаёт максимальный диаметр круга малых ступенчатых отверстий.
+        /// </summary>
+        public double MaxSmallHoleCircleDiameter
+        {
+            get => _maxSmallHoleCircleDiameter;
+            set => _maxSmallHoleCircleDiameter = value;
+        }
+
+        /// <summary>
         /// Конструктор, задающий значения по умолчанию.
         /// </summary>
         public CoverParameter()
         {
             CoverDiameter = 270;
             OuterStepDiameter = 185;
+            SmallHoleDiameter = 20;
             DiameterLargeSteppedCoverHole = 115;
             DiameterSmallSteppedHoleCover = 92;
-            SmallHoleDiameter = 20;
             CoverThickness = 37;
             CoverStepHeight = 23;
             HeightInnerStepCover = 22;
+            SmallHoleCircleDiameter = 227.5;
         }
 
         /// <summary>
