@@ -12,7 +12,6 @@ namespace CoverUI
     /// </summary>
     public partial class MainForm : Form
     {
-        //TODO: RSDN
         /// <summary>
         /// Поле параметров.
         /// </summary>
