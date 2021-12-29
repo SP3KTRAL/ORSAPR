@@ -512,6 +512,11 @@ namespace Cover
         }
 
         /// <summary>
+        /// Возвращает и задаёт kоличество малых отверстий.
+        /// </summary>
+        public int CountSmallHole { get; set; }
+
+        /// <summary>
         /// Конструктор, задающий значения по умолчанию.
         /// </summary>
         public CoverParameter()
@@ -525,6 +530,7 @@ namespace Cover
             CoverStepHeight = 23;
             HeightInnerStepCover = 22;
             SmallHoleCircleDiameter = 227.5;
+            CountSmallHole = 6;
         }
 
         /// <summary>

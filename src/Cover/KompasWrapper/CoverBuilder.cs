@@ -33,14 +33,13 @@ namespace KompasWrapper
             _kompasWrapper.CreateCircle(parameters.DiameterSmallSteppedHoleCover);
             _kompasWrapper.CutExtrudeCircle(parameters.CoverThickness);
 
-            double[,] points = {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}};
-
-            _kompasWrapper.PositionSmallHole(ref points, parameters.SmallHoleCircleDiameter);
-
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < parameters.CountSmallHole; i++)
             {
+                double[] point = { 0, 0 };
+                _kompasWrapper.PositionSmallHole(ref point, parameters.SmallHoleCircleDiameter,
+                    i, parameters.CountSmallHole);
                 _kompasWrapper.CreateCircle(parameters.SmallHoleDiameter,
-                    points[i,0], points[i,1]);
+                    point[0], point[1]);
                 _kompasWrapper.CutExtrudeCircle(parameters.CoverThickness);
             }
         }

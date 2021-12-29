@@ -25,6 +25,8 @@ namespace CoverUI
             InitializeComponent();
             _coverParameter = new CoverParameter();
 
+            countSmallHoleComboBox.SelectedIndex = 4;
+
             minMaxSmallHoleDiameterLabel.Text =
                 RenameTextLabel(CoverParameter.MIN_SMALL_HOLE_DIAMETER,
                     _coverParameter.MaxSmallHoleDiameter);
@@ -256,6 +258,17 @@ namespace CoverUI
             MessageBox.Show(message, "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             ((TextBox) sender).Focus();
+        }
+
+        /// <summary>
+        /// Событие, при потери фокуса с ComboBox.
+        /// </summary>
+        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
+        /// <param name="e">Передает объект, относящийся к обрабатываемому событию.</param>
+        private void CountSmallHoleComboBoxLeave(object sender, EventArgs e)
+        {
+            _coverParameter.CountSmallHole = 
+                Convert.ToInt32(((ComboBox)sender).SelectedItem);
         }
     }
 }

@@ -45,13 +45,10 @@ namespace KompasWrapper
         /// </summary>
         /// <param name="points">Координаты центров малых отверстий.</param>
         /// <param name="diameter">Диаметр малых отверстий.</param>
-        public void PositionSmallHole(ref double[,] points, double diameter)
+        public void PositionSmallHole(ref double[] points, double diameter,int smallHoleNumber, int count)
         {
-            for (int i = 0; i < 6; i++)
-            {
-                _document2D.ksMovePoint(ref points[i, 0], ref points[i, 1],
-                    60 * i, diameter / 2);
-            }
+            _document2D.ksMovePoint(ref points[0], ref points[1],
+                360/count * smallHoleNumber, diameter / 2);
         }
 
         /// <summary>

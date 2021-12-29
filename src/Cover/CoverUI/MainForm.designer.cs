@@ -59,6 +59,9 @@ namespace CoverUI
             this.smallHoleCircleDiameterTextBox = new System.Windows.Forms.TextBox();
             this.labelMinMaxSmallHoleCircleDiameter = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.countSmallHoleLabel = new System.Windows.Forms.Label();
+            this.countSmallHoleComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -335,11 +338,50 @@ namespace CoverUI
             this.pictureBox.TabIndex = 16;
             this.pictureBox.TabStop = false;
             // 
+            // countSmallHoleLabel
+            // 
+            this.countSmallHoleLabel.AutoSize = true;
+            this.countSmallHoleLabel.Location = new System.Drawing.Point(12, 245);
+            this.countSmallHoleLabel.Name = "countSmallHoleLabel";
+            this.countSmallHoleLabel.Size = new System.Drawing.Size(91, 13);
+            this.countSmallHoleLabel.TabIndex = 29;
+            this.countSmallHoleLabel.Text = "Count Small Hole:";
+            // 
+            // countSmallHoleComboBox
+            // 
+            this.countSmallHoleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.countSmallHoleComboBox.FormattingEnabled = true;
+            this.countSmallHoleComboBox.Items.AddRange(new object[] {
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"});
+            this.countSmallHoleComboBox.Location = new System.Drawing.Point(199, 242);
+            this.countSmallHoleComboBox.Name = "countSmallHoleComboBox";
+            this.countSmallHoleComboBox.Size = new System.Drawing.Size(60, 21);
+            this.countSmallHoleComboBox.TabIndex = 30;
+            this.countSmallHoleComboBox.Leave += new System.EventHandler(this.CountSmallHoleComboBoxLeave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(265, 245);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "(2 pcs - 8 pcs)";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 285);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.countSmallHoleComboBox);
+            this.Controls.Add(this.countSmallHoleLabel);
             this.Controls.Add(this.labelMinMaxSmallHoleCircleDiameter);
             this.Controls.Add(this.smallHoleCircleDiameterTextBox);
             this.Controls.Add(this.labelSmallHoleCircleDiameter);
@@ -410,5 +452,8 @@ namespace CoverUI
         private System.Windows.Forms.Label labelSmallHoleCircleDiameter;
         private System.Windows.Forms.TextBox smallHoleCircleDiameterTextBox;
         private System.Windows.Forms.Label labelMinMaxSmallHoleCircleDiameter;
+        private System.Windows.Forms.Label countSmallHoleLabel;
+        private System.Windows.Forms.ComboBox countSmallHoleComboBox;
+        private System.Windows.Forms.Label label1;
     }
 }
