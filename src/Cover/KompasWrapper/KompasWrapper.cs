@@ -41,14 +41,16 @@ namespace KompasWrapper
         private ksEntity _currentPlan;
 
         /// <summary>
-        /// Расставляет малые отверстия на плоскости по кругу.
+        /// Расставляет расположение малого отверстия по его индексу.
         /// </summary>
-        /// <param name="points">Координаты центров малых отверстий.</param>
-        /// <param name="diameter">Диаметр малых отверстий.</param>
-        public void PositionSmallHole(ref double[] points, double diameter,int smallHoleNumber, int count)
+        /// <param name="point">Координаты центра малого отверстия.</param>
+        /// <param name="diameter">Диаметр малого отверстия.</param>
+        /// <param name="smallHoleNumber">Индекс малого отверстия.</param>
+        /// <param name="count">Общее количество малых отверстий.</param>
+        public void PositionSmallHole(ref double[] point, double diameter, int smallHoleNumber, int count)
         {
-            _document2D.ksMovePoint(ref points[0], ref points[1],
-                360/count * smallHoleNumber, diameter / 2);
+            _document2D.ksMovePoint(ref point[0], ref point[1],
+                360 / count * smallHoleNumber, diameter / 2);
         }
 
         /// <summary>

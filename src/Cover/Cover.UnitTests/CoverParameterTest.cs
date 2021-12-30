@@ -352,10 +352,10 @@ namespace Cover.UnitTests
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
                              "SmallHoleCircleDiameter на корректное" +
                              " значение")]
-        public void TestSetSmallHoleCircleDiameter_CorrectValue_ResultCorrectSet()
+        public void TestSmallHoleCircleDiameter_CorrectValue_ResultCorrectSet()
         {
             //Setup
-            var correctValue = 100.0;
+            var correctValue = 230.0;
             var coverParameter = new CoverParameter();
 
             //Act
@@ -364,6 +364,26 @@ namespace Cover.UnitTests
             //Assert
             Assert.AreEqual(correctValue, 
                 coverParameter.SmallHoleCircleDiameter);
+        }
+
+        [TestCase(0.0, TestName = "Проверка геттера и сеттера у свойства " +
+                             "SmallHoleCircleDiameter на некорректное" +
+                             " значение меньше минимального")]
+        [TestCase(500.0, TestName = "Проверка геттера и сеттера у свойства " +
+                             "SmallHoleCircleDiameter на некорректное" +
+                             " значение больше максимального")]
+        public void TestSmallHoleCircleDiameter_IncorrectValue_ArgumentException(
+            double incorrectValue)
+        {
+            //Setup
+            var coverParameter = new CoverParameter();
+
+            //Assert
+            Assert.Throws<ArgumentException>(() =>
+            {
+                //Act
+                coverParameter.SmallHoleCircleDiameter = incorrectValue;
+            });
         }
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
@@ -624,6 +644,22 @@ namespace Cover.UnitTests
                 //Act
                 coverParameter.MaxHeightInnerStepCover = incorrectValue;
             });
+        }
+
+        [TestCase(TestName = "Проверка геттера и сеттера у " +
+                             "свойства CountSmallHole")]
+        public void TestCountSmallHole_CorrectValue_ResultCorrectSet()
+        {
+            //Setup
+            var correctValue = 6;
+            var coverParameter = new CoverParameter();
+
+            //Act
+            coverParameter.CountSmallHole = correctValue;
+
+            //Assert
+            Assert.AreEqual(correctValue,
+                coverParameter.CountSmallHole);
         }
     }
 }

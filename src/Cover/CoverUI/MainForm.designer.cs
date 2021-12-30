@@ -29,7 +29,6 @@ namespace CoverUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.coverDiameterLabel = new System.Windows.Forms.Label();
             this.diameterSmallSteppedHoleCoverLabel = new System.Windows.Forms.Label();
             this.diameterLargeSteppedCoverHoleLabel = new System.Windows.Forms.Label();
@@ -330,7 +329,7 @@ namespace CoverUI
             // 
             // pictureBox
             // 
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Image = global::CoverUI.Properties.Resources.countSmallHoleComboBox;
             this.pictureBox.Location = new System.Drawing.Point(375, 12);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(231, 198);
@@ -363,6 +362,7 @@ namespace CoverUI
             this.countSmallHoleComboBox.Name = "countSmallHoleComboBox";
             this.countSmallHoleComboBox.Size = new System.Drawing.Size(60, 21);
             this.countSmallHoleComboBox.TabIndex = 30;
+            this.countSmallHoleComboBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.countSmallHoleComboBox.Leave += new System.EventHandler(this.CountSmallHoleComboBoxLeave);
             // 
             // label1

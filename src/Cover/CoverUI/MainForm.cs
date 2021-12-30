@@ -102,9 +102,18 @@ namespace CoverUI
         /// <param name="e">Передает объект, относящийся к обрабатываемому событию.</param>
         private void TextBoxEnter(object sender, EventArgs e)
         {
-            pictureBox.Image = 
-                (Image)Properties.Resources.ResourceManager.
-                    GetObject(((TextBox)sender).Name);
+            if (sender is TextBox)
+            {
+                pictureBox.Image =
+                    (Image)Properties.Resources.ResourceManager.
+                        GetObject(((TextBox)sender).Name);
+            }
+            else
+            {
+                pictureBox.Image = 
+                    (Image)Properties.Resources.ResourceManager.
+                        GetObject(((ComboBox)sender).Name);
+            }
         }
 
         /// <summary>

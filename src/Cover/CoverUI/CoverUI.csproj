@@ -126,10 +126,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\smallHoleCircleDiameterTextBox.bmp" />
+    <None Include="Resources\smallHoleCircleDiameterTextBox.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\smallHoleCircleDiameterTextBox.png" />
+    <None Include="Resources\countSmallHoleComboBox.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

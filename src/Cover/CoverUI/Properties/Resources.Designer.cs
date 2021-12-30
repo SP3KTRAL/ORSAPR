@@ -63,6 +63,16 @@ namespace CoverUI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap countSmallHoleComboBox {
+            get {
+                object obj = ResourceManager.GetObject("countSmallHoleComboBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coverDiameterTextBox {
             get {
                 object obj = ResourceManager.GetObject("coverDiameterTextBox", resourceCulture);
