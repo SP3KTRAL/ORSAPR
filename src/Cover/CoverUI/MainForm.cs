@@ -96,11 +96,11 @@ namespace CoverUI
         }
 
         /// <summary>
-        /// Событие, при наведении фокуса на TextBox.
+        /// Событие, при наведении фокуса на Control.
         /// </summary>
         /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
         /// <param name="e">Передает объект, относящийся к обрабатываемому событию.</param>
-        private void TextBoxEnter(object sender, EventArgs e)
+        private void ControlEnter(object sender, EventArgs e)
         {
             if (sender is TextBox)
             {
