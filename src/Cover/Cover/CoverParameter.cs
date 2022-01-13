@@ -160,10 +160,10 @@ namespace Cover
 
                 _coverDiameter = value;
                 
-                MaxSmallHoleCircleDiameter = value - 10 - SmallHoleDiameter;
-                MinSmallHoleCircleDiameter = OuterStepDiameter + 10 + SmallHoleDiameter;
+                MaxSmallHoleCircleDiameter = value - 4 - SmallHoleDiameter;
+                MinSmallHoleCircleDiameter = OuterStepDiameter + 4 + SmallHoleDiameter;
 
-                MaxSmallHoleDiameter = Math.Round(value / 12.5, 1);
+                MaxSmallHoleDiameter = Math.Round(value / 25, 1);
                 MaxOuterStepDiameter = Math.Round(value / (500.0 / 350.0), 1);
 
                 if (OuterStepDiameter == 0 || 
@@ -289,8 +289,8 @@ namespace Cover
 
                 _smallHoleDiameter = value;
 
-                MaxSmallHoleCircleDiameter = CoverDiameter - 10 - value;
-                MinSmallHoleCircleDiameter = OuterStepDiameter + 10 + value;
+                MaxSmallHoleCircleDiameter = CoverDiameter - 4 - value;
+                MinSmallHoleCircleDiameter = OuterStepDiameter + 4 + value;
             }
         }
 
@@ -338,7 +338,7 @@ namespace Cover
 
                 _outerStepDiameter = value;
                 
-                MinSmallHoleCircleDiameter = value + 10 + SmallHoleDiameter;
+                MinSmallHoleCircleDiameter = value + 4 + SmallHoleDiameter;
 
                 MaxDiameterLargeSteppedCoverHole = value - 15;
 
@@ -523,7 +523,7 @@ namespace Cover
         {
             CoverDiameter = 270;
             OuterStepDiameter = 185;
-            SmallHoleDiameter = 20;
+            SmallHoleDiameter = 10;
             DiameterLargeSteppedCoverHole = 115;
             DiameterSmallSteppedHoleCover = 92;
             CoverThickness = 37;
