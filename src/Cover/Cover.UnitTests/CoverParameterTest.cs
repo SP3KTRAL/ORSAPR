@@ -14,7 +14,7 @@ namespace Cover.UnitTests
             var valueOuterStepDiameter = 185;
             var valueDiameterLargeSteppedCoverHole = 115;
             var valueDiameterSmallSteppedHoleCover = 92;
-            var valueSmallHoleDiameter = 20;
+            var valueSmallHoleDiameter = 10;
             var valueCoverThickness = 37;
             var valueCoverStepHeight = 23;
             var valueHeightInnerStepCover = 22;
@@ -287,7 +287,7 @@ namespace Cover.UnitTests
         public void TestSetSmallHoleDiameter_CorrectValue_ResultCorrectSet()
         {
             //Setup
-            var correctValue = 20.0;
+            var correctValue = 10.0;
             var coverParameter = new CoverParameter();
 
             //Act

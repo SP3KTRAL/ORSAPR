@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Cover;
 using KompasWrapper;
 using ArgumentException = System.ArgumentException;
+using Microsoft.VisualBasic.Devices;
 
 namespace CoverUI
 {
