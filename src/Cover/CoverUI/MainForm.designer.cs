@@ -182,7 +182,7 @@ namespace CoverUI
             this.smallHoleDiameterTextBox.Name = "smallHoleDiameterTextBox";
             this.smallHoleDiameterTextBox.Size = new System.Drawing.Size(60, 20);
             this.smallHoleDiameterTextBox.TabIndex = 11;
-            this.smallHoleDiameterTextBox.Text = "20";
+            this.smallHoleDiameterTextBox.Text = "10";
             this.smallHoleDiameterTextBox.Enter += new System.EventHandler(this.ControlEnter);
             this.smallHoleDiameterTextBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
@@ -261,7 +261,7 @@ namespace CoverUI
             this.minMaxSmallHoleDiameterLabel.Name = "minMaxSmallHoleDiameterLabel";
             this.minMaxSmallHoleDiameterLabel.Size = new System.Drawing.Size(80, 13);
             this.minMaxSmallHoleDiameterLabel.TabIndex = 21;
-            this.minMaxSmallHoleDiameterLabel.Text = "(2 mm – 40 mm)";
+            this.minMaxSmallHoleDiameterLabel.Text = "(2 mm – 20 mm)";
             // 
             // minMaxOuterStepDiameterLabel
             // 
