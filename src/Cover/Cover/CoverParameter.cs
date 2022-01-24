@@ -150,43 +150,45 @@ namespace Cover
             get => _coverDiameter;
             set
             {
-                if (value < MIN_COVER_DIAMETER || value > MAX_COVER_DIAMETER)
+                if (value >= MIN_COVER_DIAMETER && value <= MAX_COVER_DIAMETER)
                 {
-                    string parameterName = "Cover Diameter";
+                    _coverDiameter = value;
 
-                    ExceptionCallText(parameterName, value, 
-                        MIN_COVER_DIAMETER, MAX_COVER_DIAMETER);
+                    MaxSmallHoleCircleDiameter = value - 4 - SmallHoleDiameter;
+                    MinSmallHoleCircleDiameter = OuterStepDiameter + 4 + SmallHoleDiameter;
+
+                    MaxSmallHoleDiameter = Math.Round(value / 25, 1);
+                    MaxOuterStepDiameter = Math.Round(value / (500.0 / 350.0), 1);
+
+                    if (OuterStepDiameter == 0 ||
+                        OuterStepDiameter > MaxOuterStepDiameter)
+                    {
+                        MaxDiameterLargeSteppedCoverHole = MaxOuterStepDiameter - 15;
+                    }
+                    else
+                    {
+                        MaxDiameterLargeSteppedCoverHole = OuterStepDiameter - 15;
+                    }
+
+                    if (DiameterLargeSteppedCoverHole == 0 ||
+                        DiameterLargeSteppedCoverHole > MaxDiameterLargeSteppedCoverHole)
+                    {
+                        MaxDiameterSmallSteppedHoleCover =
+                            MaxDiameterLargeSteppedCoverHole - 5;
+                    }
+                    else
+                    {
+                        MaxDiameterSmallSteppedHoleCover =
+                            DiameterLargeSteppedCoverHole - 5;
+                    }
+
+                    return;
                 }
 
-                _coverDiameter = value;
-                
-                MaxSmallHoleCircleDiameter = value - 4 - SmallHoleDiameter;
-                MinSmallHoleCircleDiameter = OuterStepDiameter + 4 + SmallHoleDiameter;
+                string parameterName = "Cover Diameter";
 
-                MaxSmallHoleDiameter = Math.Round(value / 25, 1);
-                MaxOuterStepDiameter = Math.Round(value / (500.0 / 350.0), 1);
-
-                if (OuterStepDiameter == 0 || 
-                    OuterStepDiameter > MaxOuterStepDiameter)
-                {
-                    MaxDiameterLargeSteppedCoverHole = MaxOuterStepDiameter - 15;
-                }
-                else
-                {
-                    MaxDiameterLargeSteppedCoverHole = OuterStepDiameter - 15;
-                }
-
-                if (DiameterLargeSteppedCoverHole == 0 || 
-                    DiameterLargeSteppedCoverHole > MaxDiameterLargeSteppedCoverHole)
-                {
-                    MaxDiameterSmallSteppedHoleCover = 
-                        MaxDiameterLargeSteppedCoverHole - 5;
-                }
-                else
-                {
-                    MaxDiameterSmallSteppedHoleCover = 
-                        DiameterLargeSteppedCoverHole - 5;
-                }
+                ExceptionCallText(parameterName, value,
+                    MIN_COVER_DIAMETER, MAX_COVER_DIAMETER);
             }
         }
 
@@ -198,17 +200,18 @@ namespace Cover
             get => _diameterSmallSteppedHoleCover;
             set
             {
-                if (value < MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER || 
-                    value > MaxDiameterSmallSteppedHoleCover)
+                if (value >= MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER &&
+                    value <= MaxDiameterSmallSteppedHoleCover)
                 {
-                    string parameterName = "Diameter Small Stepped Hole Cover";
-
-                    ExceptionCallText(parameterName, value,
-                        MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER,
-                        MaxDiameterSmallSteppedHoleCover);
+                    _diameterSmallSteppedHoleCover = value;
+                    return;
                 }
 
-                _diameterSmallSteppedHoleCover = value;
+                string parameterName = "Diameter Small Stepped Hole Cover";
+
+                ExceptionCallText(parameterName, value,
+                    MIN_DIAMETER_SMALL_STEPPED_HOLE_COVER,
+                    MaxDiameterSmallSteppedHoleCover);
             }
         }
 
@@ -220,12 +223,13 @@ namespace Cover
             get => _maxDiameterSmallSteppedHoleCover;
             set
             {
-                if (value < 0)
+                if (value > 0)
                 {
-                    ThrowArgumentExceptionLessZero();
+                    _maxDiameterSmallSteppedHoleCover = value;
+                    return;
                 }
 
-                _maxDiameterSmallSteppedHoleCover = value;
+                ThrowArgumentExceptionLessZero();
             }
         }
 
@@ -237,19 +241,19 @@ namespace Cover
             get => _diameterLargeSteppedCoverHole;
             set
             {
-                if (value < MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE || 
-                    value > MaxDiameterLargeSteppedCoverHole)
+                if (value >= MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE &&
+                    value <= MaxDiameterLargeSteppedCoverHole)
                 {
-                    string parameterName = "Diameter Large Stepped Cover Hole";
-
-                    ExceptionCallText(parameterName, value, 
-                        MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE, 
-                        MaxDiameterLargeSteppedCoverHole);
+                    _diameterLargeSteppedCoverHole = value;
+                    MaxDiameterSmallSteppedHoleCover = value - 5;
+                    return;
                 }
 
-                _diameterLargeSteppedCoverHole = value;
+                string parameterName = "Diameter Large Stepped Cover Hole";
 
-                MaxDiameterSmallSteppedHoleCover = value - 5;
+                ExceptionCallText(parameterName, value,
+                    MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE,
+                    MaxDiameterLargeSteppedCoverHole);
             }
         }
 
@@ -261,12 +265,13 @@ namespace Cover
             get => _maxDiameterLargeSteppedCoverHole;
             set
             {
-                if (value < 0)
+                if (value > 0)
                 {
-                    ThrowArgumentExceptionLessZero();
+                    _maxDiameterLargeSteppedCoverHole = value;
+                    return;
                 }
 
-                _maxDiameterLargeSteppedCoverHole = value;
+                ThrowArgumentExceptionLessZero();
             }
         }
 
@@ -278,19 +283,21 @@ namespace Cover
             get => _smallHoleDiameter;
             set
             {
-                if (value < MIN_SMALL_HOLE_DIAMETER || 
-                    value > MaxSmallHoleDiameter)
+                if (value >= MIN_SMALL_HOLE_DIAMETER &&
+                    value <= MaxSmallHoleDiameter)
                 {
-                    string parameterName = "Small Hole Diameter";
+                    _smallHoleDiameter = value;
 
-                    ExceptionCallText(parameterName, value,
-                        MIN_SMALL_HOLE_DIAMETER, MaxSmallHoleDiameter);
+                    MaxSmallHoleCircleDiameter = CoverDiameter - 4 - value;
+                    MinSmallHoleCircleDiameter = OuterStepDiameter + 4 + value;
+
+                    return;
                 }
 
-                _smallHoleDiameter = value;
+                string parameterName = "Small Hole Diameter";
 
-                MaxSmallHoleCircleDiameter = CoverDiameter - 4 - value;
-                MinSmallHoleCircleDiameter = OuterStepDiameter + 4 + value;
+                ExceptionCallText(parameterName, value,
+                    MIN_SMALL_HOLE_DIAMETER, MaxSmallHoleDiameter);
             }
         }
 
@@ -302,12 +309,13 @@ namespace Cover
             get => _maxSmallHoleDiameter;
             set
             {
-                if (value < 0)
+                if (value > 0)
                 {
-                    ThrowArgumentExceptionLessZero();
+                    _maxSmallHoleDiameter = value;
+                    return;
                 }
 
-                _maxSmallHoleDiameter = value;
+                ThrowArgumentExceptionLessZero();
             }
         }
         
@@ -327,32 +335,34 @@ namespace Cover
             get => _outerStepDiameter;
             set
             {
-                if (value < MIN_OUTER_STEP_DIAMETER 
-                    || value > MaxOuterStepDiameter)
+                if (value >= MIN_OUTER_STEP_DIAMETER &&
+                    value <= MaxOuterStepDiameter)
                 {
-                    string parameterName = "Outer Step Diameter";
+                    _outerStepDiameter = value;
 
-                    ExceptionCallText(parameterName, value,
-                        MIN_OUTER_STEP_DIAMETER, MaxOuterStepDiameter);
+                    MinSmallHoleCircleDiameter = value + 4 + SmallHoleDiameter;
+
+                    MaxDiameterLargeSteppedCoverHole = value - 15;
+
+                    if (DiameterLargeSteppedCoverHole == 0 ||
+                        DiameterLargeSteppedCoverHole > MaxDiameterLargeSteppedCoverHole)
+                    {
+                        MaxDiameterSmallSteppedHoleCover =
+                            MaxDiameterLargeSteppedCoverHole - 5;
+                    }
+                    else
+                    {
+                        MaxDiameterSmallSteppedHoleCover =
+                            DiameterLargeSteppedCoverHole - 5;
+                    }
+
+                    return;
                 }
 
-                _outerStepDiameter = value;
-                
-                MinSmallHoleCircleDiameter = value + 4 + SmallHoleDiameter;
+                string parameterName = "Outer Step Diameter";
 
-                MaxDiameterLargeSteppedCoverHole = value - 15;
-
-                if (DiameterLargeSteppedCoverHole == 0 || 
-                    DiameterLargeSteppedCoverHole > MaxDiameterLargeSteppedCoverHole)
-                {
-                    MaxDiameterSmallSteppedHoleCover = 
-                        MaxDiameterLargeSteppedCoverHole - 5;
-                }
-                else
-                {
-                    MaxDiameterSmallSteppedHoleCover = 
-                        DiameterLargeSteppedCoverHole - 5;
-                }
+                ExceptionCallText(parameterName, value,
+                    MIN_OUTER_STEP_DIAMETER, MaxOuterStepDiameter);
             }
         }
 
@@ -364,12 +374,13 @@ namespace Cover
             get => _maxOuterStepDiameter;
             set
             {
-                if (value < 0)
+                if (value > 0)
                 {
-                    ThrowArgumentExceptionLessZero();
+                    _maxOuterStepDiameter = value;
+                    return;
                 }
 
-                _maxOuterStepDiameter = value;
+                ThrowArgumentExceptionLessZero();
             }
         }
 
@@ -381,18 +392,21 @@ namespace Cover
             get => _coverThickness;
             set
             {
-                if (value < MIN_COVER_THICKNESS || value > MAX_COVER_THICKNESS)
+                if (value >= MIN_COVER_THICKNESS &&
+                    value <= MAX_COVER_THICKNESS)
                 {
-                    string parameterName = "Cover Thickness";
+                    _coverThickness = value;
 
-                    ExceptionCallText(parameterName, value, 
-                        MIN_COVER_THICKNESS, MAX_COVER_THICKNESS);
+                    MaxCoverStepHeight = Math.Round(value / 1.5, 1);
+                    MaxHeightInnerStepCover = Math.Round(value / 1.2, 1);
+
+                    return;
                 }
 
-                _coverThickness = value;
+                string parameterName = "Cover Thickness";
 
-                MaxCoverStepHeight = Math.Round(value / 1.5, 1);
-                MaxHeightInnerStepCover = Math.Round(value / 1.2, 1);
+                ExceptionCallText(parameterName, value,
+                    MIN_COVER_THICKNESS, MAX_COVER_THICKNESS);
             }
         }
 
@@ -404,16 +418,17 @@ namespace Cover
             get => _coverStepHeight;
             set
             {
-                if (value < MIN_COVER_STEP_HEIGHT || 
-                    value > MaxCoverStepHeight)
+                if (value >= MIN_COVER_STEP_HEIGHT &&
+                    value <= MaxCoverStepHeight)
                 {
-                    string parameterName = "Cover Step Height";
-
-                    ExceptionCallText(parameterName, value, 
-                        MIN_COVER_STEP_HEIGHT, MaxCoverStepHeight);
+                    _coverStepHeight = value;
+                    return;
                 }
 
-                _coverStepHeight = value;
+                string parameterName = "Cover Step Height";
+
+                ExceptionCallText(parameterName, value,
+                    MIN_COVER_STEP_HEIGHT, MaxCoverStepHeight);
             }
         }
 
@@ -425,12 +440,13 @@ namespace Cover
             get => _maxCoverStepHeight;
             set
             {
-                if (value < 0)
+                if (value > 0)
                 {
-                    ThrowArgumentExceptionLessZero();
+                    _maxCoverStepHeight = value;
+                    return;
                 }
 
-                _maxCoverStepHeight = value;
+                ThrowArgumentExceptionLessZero();
             }
         }
 
@@ -442,16 +458,17 @@ namespace Cover
             get => _heightInnerStepCover;
             set
             {
-                if (value < MIN_HEIGHT_INNER_STEP_COVER || 
-                    value > MaxHeightInnerStepCover)
+                if (value >= MIN_HEIGHT_INNER_STEP_COVER &&
+                    value <= MaxHeightInnerStepCover)
                 {
-                    string parameterName = "Height Inner Step Cover";
-
-                    ExceptionCallText(parameterName, value, 
-                        MIN_HEIGHT_INNER_STEP_COVER, MaxHeightInnerStepCover);
+                    _heightInnerStepCover = value;
+                    return;
                 }
 
-                _heightInnerStepCover = value;
+                string parameterName = "Height Inner Step Cover";
+
+                ExceptionCallText(parameterName, value,
+                    MIN_HEIGHT_INNER_STEP_COVER, MaxHeightInnerStepCover);
             }
         }
 
@@ -463,12 +480,13 @@ namespace Cover
             get => _maxHeightInnerStepCover;
             set
             {
-                if (value < 0)
+                if (value > 0)
                 {
-                    ThrowArgumentExceptionLessZero();
+                    _maxHeightInnerStepCover = value;
+                    return;
                 }
 
-                _maxHeightInnerStepCover = value;
+                ThrowArgumentExceptionLessZero();
             }
         }
 
@@ -480,16 +498,17 @@ namespace Cover
             get => _smallHoleCircleDiameter;
             set
             {
-                if (value < MinSmallHoleCircleDiameter ||
-                    value > MaxSmallHoleCircleDiameter)
+                if (value >= MinSmallHoleCircleDiameter &&
+                    value <= MaxSmallHoleCircleDiameter)
                 {
-                    string parameterName = "Small Hole Circle Diameter";
-
-                    ExceptionCallText(parameterName, value,
-                        MinSmallHoleCircleDiameter, MaxSmallHoleCircleDiameter);
+                    _smallHoleCircleDiameter = value;
+                    return;
                 }
 
-                _smallHoleCircleDiameter = value;
+                string parameterName = "Small Hole Circle Diameter";
+
+                ExceptionCallText(parameterName, value,
+                    MinSmallHoleCircleDiameter, MaxSmallHoleCircleDiameter);
             }
         }
 
