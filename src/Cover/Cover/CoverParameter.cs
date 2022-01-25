@@ -68,7 +68,8 @@ namespace Cover
         private double _diameterSmallSteppedHoleCover;
 
         /// <summary>
-        /// Максимальное значение диаметра малого ступенчатого отверстия.
+        /// Максимальное значение диаметра
+        /// малого ступенчатого отверстия.
         /// </summary>
         private double _maxDiameterSmallSteppedHoleCover;
 
@@ -78,7 +79,8 @@ namespace Cover
         private double _diameterLargeSteppedCoverHole;
 
         /// <summary>
-        /// Максимальное значение диаметра большого ступенчатого отверстия.
+        /// Максимальное значение диаметра
+        /// большого ступенчатого отверстия.
         /// </summary>
         private double _maxDiameterLargeSteppedCoverHole;
 
@@ -123,7 +125,8 @@ namespace Cover
         private double _heightInnerStepCover;
 
         /// <summary>
-        /// Максимальное значение высоты внутренней ступени крышки.
+        /// Максимальное значение высоты
+        /// внутренней ступени крышки.
         /// </summary>
         private double _maxHeightInnerStepCover;
 
@@ -133,12 +136,14 @@ namespace Cover
         private double _smallHoleCircleDiameter;
 
         /// <summary>
-        /// Минимальный диаметр круга малых ступенчатых отверстий.
+        /// Минимальный диаметр круга
+        /// малых ступенчатых отверстий.
         /// </summary>
         private double _minSmallHoleCircleDiameter;
 
         /// <summary>
-        /// Максимальный диаметр круга малых ступенчатых отверстий.
+        /// Максимальный диаметр круга
+        /// малых ступенчатых отверстий.
         /// </summary>
         private double _maxSmallHoleCircleDiameter;
 
@@ -150,28 +155,35 @@ namespace Cover
             get => _coverDiameter;
             set
             {
-                if (value >= MIN_COVER_DIAMETER && value <= MAX_COVER_DIAMETER)
+                if (value >= MIN_COVER_DIAMETER && 
+                    value <= MAX_COVER_DIAMETER)
                 {
                     _coverDiameter = value;
 
-                    MaxSmallHoleCircleDiameter = value - 4 - SmallHoleDiameter;
-                    MinSmallHoleCircleDiameter = OuterStepDiameter + 4 + SmallHoleDiameter;
+                    MaxSmallHoleCircleDiameter = 
+                        value - 4 - SmallHoleDiameter;
+                    MinSmallHoleCircleDiameter = 
+                        OuterStepDiameter + 4 + SmallHoleDiameter;
 
                     MaxSmallHoleDiameter = Math.Round(value / 25, 1);
-                    MaxOuterStepDiameter = Math.Round(value / (500.0 / 350.0), 1);
+                    MaxOuterStepDiameter = 
+                        Math.Round(value / (500.0 / 350.0), 1);
 
                     if (OuterStepDiameter == 0 ||
                         OuterStepDiameter > MaxOuterStepDiameter)
                     {
-                        MaxDiameterLargeSteppedCoverHole = MaxOuterStepDiameter - 15;
+                        MaxDiameterLargeSteppedCoverHole = 
+                            MaxOuterStepDiameter - 15;
                     }
                     else
                     {
-                        MaxDiameterLargeSteppedCoverHole = OuterStepDiameter - 15;
+                        MaxDiameterLargeSteppedCoverHole = 
+                            OuterStepDiameter - 15;
                     }
 
                     if (DiameterLargeSteppedCoverHole == 0 ||
-                        DiameterLargeSteppedCoverHole > MaxDiameterLargeSteppedCoverHole)
+                        DiameterLargeSteppedCoverHole > 
+                        MaxDiameterLargeSteppedCoverHole)
                     {
                         MaxDiameterSmallSteppedHoleCover =
                             MaxDiameterLargeSteppedCoverHole - 5;
@@ -216,7 +228,8 @@ namespace Cover
         }
 
         /// <summary>
-        /// Возвращает и задаёт максимальный диаметр малого ступенчатого отверстия.
+        /// Возвращает и задаёт максимальный
+        /// диаметр малого ступенчатого отверстия.
         /// </summary>
         public double MaxDiameterSmallSteppedHoleCover
         {
@@ -234,7 +247,8 @@ namespace Cover
         }
 
         /// <summary>
-        /// Возвращает и задаёт диаметр большого ступенчатого отверстия.
+        /// Возвращает и задаёт диаметр
+        /// большого ступенчатого отверстия.
         /// </summary>
         public double DiameterLargeSteppedCoverHole
         {
@@ -258,7 +272,8 @@ namespace Cover
         }
 
         /// <summary>
-        /// Возвращает и задаёт максимальный диаметр большого ступенчатого отверстия.
+        /// Возвращает и задаёт максимальный диаметр
+        /// большого ступенчатого отверстия.
         /// </summary>
         public double MaxDiameterLargeSteppedCoverHole
         {
@@ -324,7 +339,8 @@ namespace Cover
         /// </summary>
         private static void ThrowArgumentExceptionLessZero()
         {
-            throw new ArgumentException("Value must be greater than zero");
+            throw new ArgumentException(
+                "Value must be greater than zero");
         }
 
         /// <summary>
@@ -345,7 +361,8 @@ namespace Cover
                     MaxDiameterLargeSteppedCoverHole = value - 15;
 
                     if (DiameterLargeSteppedCoverHole == 0 ||
-                        DiameterLargeSteppedCoverHole > MaxDiameterLargeSteppedCoverHole)
+                        DiameterLargeSteppedCoverHole > 
+                        MaxDiameterLargeSteppedCoverHole)
                     {
                         MaxDiameterSmallSteppedHoleCover =
                             MaxDiameterLargeSteppedCoverHole - 5;
@@ -367,7 +384,8 @@ namespace Cover
         }
 
         /// <summary>
-        /// Возвращает и задаёт максимальный диаметр внешней ступени.
+        /// Возвращает и задаёт максимальный
+        /// диаметр внешней ступени.
         /// </summary>
         public double MaxOuterStepDiameter
         {
@@ -473,7 +491,8 @@ namespace Cover
         }
 
         /// <summary>
-        /// Возвращает и задаёт максимальную высоту внутренней ступени крышки.
+        /// Возвращает и задаёт максимальную
+        /// высоту внутренней ступени крышки.
         /// </summary>
         public double MaxHeightInnerStepCover
         {
@@ -491,7 +510,8 @@ namespace Cover
         }
 
         /// <summary>
-        /// Возвращает и задаёт диаметр круга малых ступенчатых отверстий.
+        /// Возвращает и задаёт диаметр
+        /// круга малых ступенчатых отверстий.
         /// </summary>
         public double SmallHoleCircleDiameter
         {
@@ -513,7 +533,8 @@ namespace Cover
         }
 
         /// <summary>
-        /// Возвращает и задаёт минимальный диаметр круга малых ступенчатых отверстий.
+        /// Возвращает и задаёт минимальный диаметр
+        /// круга малых ступенчатых отверстий.
         /// </summary>
         public double MinSmallHoleCircleDiameter
         {
@@ -522,7 +543,8 @@ namespace Cover
         }
 
         /// <summary>
-        /// Возвращает и задаёт максимальный диаметр круга малых ступенчатых отверстий.
+        /// Возвращает и задаёт максимальный диаметр
+        /// круга малых ступенчатых отверстий.
         /// </summary>
         public double MaxSmallHoleCircleDiameter
         {

@@ -61,8 +61,10 @@ namespace CoverUI
         /// <summary>
         /// Событие, при нажатии на кнопку "Build".
         /// </summary>
-        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
-        /// <param name="e">Передает объект, относящийся к обрабатываемому событию.</param>
+        /// <param name="sender">Ссылка на объект,
+        /// который вызвал событие.</param>
+        /// <param name="e">Передает объект, относящийся
+        /// к обрабатываемому событию.</param>
         private void BuildButtonClick(object sender, EventArgs e)
         {
             Control thisTextBox = null;
@@ -98,8 +100,10 @@ namespace CoverUI
         /// <summary>
         /// Событие, при наведении фокуса на Control.
         /// </summary>
-        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
-        /// <param name="e">Передает объект, относящийся к обрабатываемому событию.</param>
+        /// <param name="sender">Ссылка на объект,
+        /// который вызвал событие.</param>
+        /// <param name="e">Передает объект,
+        /// относящийся к обрабатываемому событию.</param>
         private void ControlEnter(object sender, EventArgs e)
         {
             if (sender is TextBox)
@@ -119,8 +123,10 @@ namespace CoverUI
         /// <summary>
         /// Событие, при потери фокуса с TextBox.
         /// </summary>
-        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
-        /// <param name="e">Передает объект, относящийся к обрабатываемому событию.</param>
+        /// <param name="sender">Ссылка на объект,
+        /// который вызвал событие.</param>
+        /// <param name="e">Передает объект,
+        /// относящийся к обрабатываемому событию.</param>
         private void TextBoxLeave(object sender, EventArgs e)
         {
             try
@@ -143,7 +149,8 @@ namespace CoverUI
         /// <summary>
         /// Заносит значение из TextBox в поле параметров.
         /// </summary>
-        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
+        /// <param name="sender">Ссылка на объект,
+        /// который вызвал событие.</param>
         private void ChangeParameter(object sender)
         {
             ((TextBox)sender).Text = 
@@ -251,7 +258,8 @@ namespace CoverUI
         /// </summary>
         /// <param name="min">Минимальное значение.</param>
         /// <param name="max">Максимальное значение.</param>
-        /// <returns>Строка, с новыми значениями минимального и максимального.</returns>
+        /// <returns>Строка, с новыми значениями
+        /// минимального и максимального.</returns>
         private string RenameTextLabel(double min, double max)
         {
             return $@"({min} mm – {max} mm)";
@@ -260,7 +268,8 @@ namespace CoverUI
         /// <summary>
         /// Выводит сообщение об ошибке.
         /// </summary>
-        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
+        /// <param name="sender">Ссылка на объект,
+        /// который вызвал событие.</param>
         /// <param name="message">Сообщение ошибки.</param>
         private static void ShowMessage(object sender, string message)
         {
@@ -272,8 +281,10 @@ namespace CoverUI
         /// <summary>
         /// Событие, при потери фокуса с ComboBox.
         /// </summary>
-        /// <param name="sender">Ссылка на объект, который вызвал событие.</param>
-        /// <param name="e">Передает объект, относящийся к обрабатываемому событию.</param>
+        /// <param name="sender">Ссылка на объект,
+        /// который вызвал событие.</param>
+        /// <param name="e">Передает объект,
+        /// относящийся к обрабатываемому событию.</param>
         private void CountSmallHoleComboBoxLeave(object sender, EventArgs e)
         {
             _coverParameter.CountSmallHole = 

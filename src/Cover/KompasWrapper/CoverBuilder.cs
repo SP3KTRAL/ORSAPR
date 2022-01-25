@@ -37,7 +37,8 @@ namespace KompasWrapper
             {
                 double[] point = { 0, 0 };
 
-                _kompasWrapper.PositionSmallHole(ref point, parameters.SmallHoleCircleDiameter,
+                _kompasWrapper.PositionSmallHole(
+                    ref point, parameters.SmallHoleCircleDiameter, 
                     i, parameters.CountSmallHole);
 
                 _kompasWrapper.CreateCircle(parameters.SmallHoleDiameter,

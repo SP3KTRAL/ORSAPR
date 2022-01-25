@@ -47,7 +47,8 @@ namespace KompasWrapper
         /// <param name="diameter">Диаметр малого отверстия.</param>
         /// <param name="smallHoleNumber">Индекс малого отверстия.</param>
         /// <param name="count">Общее количество малых отверстий.</param>
-        public void PositionSmallHole(ref double[] point, double diameter, int smallHoleNumber, int count)
+        public void PositionSmallHole(ref double[] point, 
+            double diameter, int smallHoleNumber, int count)
         {
             _document2D.ksMovePoint(ref point[0], ref point[1],
                 360 / count * smallHoleNumber, diameter / 2);
