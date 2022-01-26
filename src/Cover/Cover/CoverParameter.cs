@@ -160,6 +160,7 @@ namespace Cover
                 {
                     _coverDiameter = value;
 
+                    //TODO: to const
                     MaxSmallHoleCircleDiameter = 
                         value - 4 - SmallHoleDiameter;
                     MinSmallHoleCircleDiameter = 
@@ -169,6 +170,7 @@ namespace Cover
                     MaxOuterStepDiameter = 
                         Math.Round(value / (500.0 / 350.0), 1);
 
+                    //TODO: to const
                     if (OuterStepDiameter == 0 ||
                         OuterStepDiameter > MaxOuterStepDiameter)
                     {
@@ -181,6 +183,7 @@ namespace Cover
                             OuterStepDiameter - 15;
                     }
 
+                    //TODO: to const
                     if (DiameterLargeSteppedCoverHole == 0 ||
                         DiameterLargeSteppedCoverHole > 
                         MaxDiameterLargeSteppedCoverHole)
@@ -258,6 +261,7 @@ namespace Cover
                 if (value >= MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE &&
                     value <= MaxDiameterLargeSteppedCoverHole)
                 {
+                    //TODO: to const
                     _diameterLargeSteppedCoverHole = value;
                     MaxDiameterSmallSteppedHoleCover = value - 5;
                     return;
@@ -303,6 +307,7 @@ namespace Cover
                 {
                     _smallHoleDiameter = value;
 
+                    //TODO: to const
                     MaxSmallHoleCircleDiameter = CoverDiameter - 4 - value;
                     MinSmallHoleCircleDiameter = OuterStepDiameter + 4 + value;
 
@@ -356,6 +361,7 @@ namespace Cover
                 {
                     _outerStepDiameter = value;
 
+                    //TODO: to const
                     MinSmallHoleCircleDiameter = value + 4 + SmallHoleDiameter;
 
                     MaxDiameterLargeSteppedCoverHole = value - 15;
