@@ -58,6 +58,21 @@ namespace Cover
         public const double MIN_HEIGHT_INNER_STEP_COVER = 5;
 
         /// <summary>
+        /// Отступ для диаметра окружности малых отверстий.
+        /// </summary>
+        private const double RETRACT_SMALL_HOLE_CIRCLE_DIAMETER = 4;
+
+        /// <summary>
+        /// Отступ для диаметра большого ступенчатого отверстия крышки.
+        /// </summary>
+        private const double RETRACT_DIAMETER_LARGE_STEPPED_COVER_HOLE = 15;
+
+        /// <summary>
+        /// Отступ для диаметра малого ступенчатого отверстия крышки.
+        /// </summary>
+        private const double RETRACT_DIAMETER_SMALL_STEPPED_HOLE_COVER = 5;
+
+        /// <summary>
         /// Диаметр крышки.
         /// </summary>
         private double _coverDiameter;
@@ -162,9 +177,13 @@ namespace Cover
 
                     //TODO: to const
                     MaxSmallHoleCircleDiameter = 
-                        value - 4 - SmallHoleDiameter;
+                        value - RETRACT_SMALL_HOLE_CIRCLE_DIAMETER - 
+                        SmallHoleDiameter;
+
                     MinSmallHoleCircleDiameter = 
-                        OuterStepDiameter + 4 + SmallHoleDiameter;
+                        OuterStepDiameter + 
+                        RETRACT_SMALL_HOLE_CIRCLE_DIAMETER + 
+                        SmallHoleDiameter;
 
                     MaxSmallHoleDiameter = Math.Round(value / 25, 1);
                     MaxOuterStepDiameter = 
@@ -175,12 +194,14 @@ namespace Cover
                         OuterStepDiameter > MaxOuterStepDiameter)
                     {
                         MaxDiameterLargeSteppedCoverHole = 
-                            MaxOuterStepDiameter - 15;
+                            MaxOuterStepDiameter - 
+                            RETRACT_DIAMETER_LARGE_STEPPED_COVER_HOLE;
                     }
                     else
                     {
                         MaxDiameterLargeSteppedCoverHole = 
-                            OuterStepDiameter - 15;
+                            OuterStepDiameter - 
+                            RETRACT_DIAMETER_LARGE_STEPPED_COVER_HOLE;
                     }
 
                     //TODO: to const
@@ -189,12 +210,14 @@ namespace Cover
                         MaxDiameterLargeSteppedCoverHole)
                     {
                         MaxDiameterSmallSteppedHoleCover =
-                            MaxDiameterLargeSteppedCoverHole - 5;
+                            MaxDiameterLargeSteppedCoverHole - 
+                            RETRACT_DIAMETER_SMALL_STEPPED_HOLE_COVER;
                     }
                     else
                     {
                         MaxDiameterSmallSteppedHoleCover =
-                            DiameterLargeSteppedCoverHole - 5;
+                            DiameterLargeSteppedCoverHole - 
+                            RETRACT_DIAMETER_SMALL_STEPPED_HOLE_COVER;
                     }
 
                     return;
@@ -263,7 +286,8 @@ namespace Cover
                 {
                     //TODO: to const
                     _diameterLargeSteppedCoverHole = value;
-                    MaxDiameterSmallSteppedHoleCover = value - 5;
+                    MaxDiameterSmallSteppedHoleCover = 
+                        value - RETRACT_DIAMETER_SMALL_STEPPED_HOLE_COVER;
                     return;
                 }
 
@@ -308,8 +332,13 @@ namespace Cover
                     _smallHoleDiameter = value;
 
                     //TODO: to const
-                    MaxSmallHoleCircleDiameter = CoverDiameter - 4 - value;
-                    MinSmallHoleCircleDiameter = OuterStepDiameter + 4 + value;
+                    MaxSmallHoleCircleDiameter = 
+                        CoverDiameter - 
+                        RETRACT_SMALL_HOLE_CIRCLE_DIAMETER - value;
+
+                    MinSmallHoleCircleDiameter = 
+                        OuterStepDiameter + 
+                        RETRACT_SMALL_HOLE_CIRCLE_DIAMETER + value;
 
                     return;
                 }
@@ -362,21 +391,26 @@ namespace Cover
                     _outerStepDiameter = value;
 
                     //TODO: to const
-                    MinSmallHoleCircleDiameter = value + 4 + SmallHoleDiameter;
+                    MinSmallHoleCircleDiameter = 
+                        value + 
+                        RETRACT_SMALL_HOLE_CIRCLE_DIAMETER + SmallHoleDiameter;
 
-                    MaxDiameterLargeSteppedCoverHole = value - 15;
+                    MaxDiameterLargeSteppedCoverHole = 
+                        value - RETRACT_DIAMETER_LARGE_STEPPED_COVER_HOLE;
 
                     if (DiameterLargeSteppedCoverHole == 0 ||
                         DiameterLargeSteppedCoverHole > 
                         MaxDiameterLargeSteppedCoverHole)
                     {
                         MaxDiameterSmallSteppedHoleCover =
-                            MaxDiameterLargeSteppedCoverHole - 5;
+                            MaxDiameterLargeSteppedCoverHole - 
+                            RETRACT_DIAMETER_SMALL_STEPPED_HOLE_COVER;
                     }
                     else
                     {
                         MaxDiameterSmallSteppedHoleCover =
-                            DiameterLargeSteppedCoverHole - 5;
+                            DiameterLargeSteppedCoverHole - 
+                            RETRACT_DIAMETER_SMALL_STEPPED_HOLE_COVER;
                     }
 
                     return;

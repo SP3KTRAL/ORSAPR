@@ -248,7 +248,7 @@ namespace Cover.UnitTests
 
         [TestCase(TestName = "Проверка геттера и сеттера у свойства " +
                              "MaxDiameterLargeSteppedCoverHole на " +
-                             "корректное значение ")]
+                             "корректное значение")]
         public void TestSetMaxDiameterLargeSteppedCoverHole_CorrectValue_ResultCorrectSet()
         {
             //Setup
