@@ -174,8 +174,7 @@ namespace Cover
                     value <= MAX_COVER_DIAMETER)
                 {
                     _coverDiameter = value;
-
-                    //TODO: to const
+                    
                     MaxSmallHoleCircleDiameter = 
                         value - RETRACT_SMALL_HOLE_CIRCLE_DIAMETER - 
                         SmallHoleDiameter;
@@ -188,8 +187,7 @@ namespace Cover
                     MaxSmallHoleDiameter = Math.Round(value / 25, 1);
                     MaxOuterStepDiameter = 
                         Math.Round(value / (500.0 / 350.0), 1);
-
-                    //TODO: to const
+                    
                     if (OuterStepDiameter == 0 ||
                         OuterStepDiameter > MaxOuterStepDiameter)
                     {
@@ -203,8 +201,7 @@ namespace Cover
                             OuterStepDiameter - 
                             RETRACT_DIAMETER_LARGE_STEPPED_COVER_HOLE;
                     }
-
-                    //TODO: to const
+                    
                     if (DiameterLargeSteppedCoverHole == 0 ||
                         DiameterLargeSteppedCoverHole > 
                         MaxDiameterLargeSteppedCoverHole)
@@ -284,7 +281,6 @@ namespace Cover
                 if (value >= MIN_DIAMETER_LARGE_STEPPED_COVER_HOLE &&
                     value <= MaxDiameterLargeSteppedCoverHole)
                 {
-                    //TODO: to const
                     _diameterLargeSteppedCoverHole = value;
                     MaxDiameterSmallSteppedHoleCover = 
                         value - RETRACT_DIAMETER_SMALL_STEPPED_HOLE_COVER;
@@ -330,8 +326,7 @@ namespace Cover
                     value <= MaxSmallHoleDiameter)
                 {
                     _smallHoleDiameter = value;
-
-                    //TODO: to const
+                    
                     MaxSmallHoleCircleDiameter = 
                         CoverDiameter - 
                         RETRACT_SMALL_HOLE_CIRCLE_DIAMETER - value;
@@ -390,7 +385,6 @@ namespace Cover
                 {
                     _outerStepDiameter = value;
 
-                    //TODO: to const
                     MinSmallHoleCircleDiameter = 
                         value + 
                         RETRACT_SMALL_HOLE_CIRCLE_DIAMETER + SmallHoleDiameter;
